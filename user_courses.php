@@ -61,7 +61,7 @@
       </li> 
 -->
   
-      <a class="btn btn-secondary" href="userlogin.php" role = "button"> Log Out </a>
+      <a class="btn btn-secondary" href="user_log_out.php" role = "button"> Log Out </a>
 
 
 

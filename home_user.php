@@ -25,7 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    <nav class="navbar  navbar-expand-sm bg-dark navbar-light">
   <div class="container-fluid">
     <ul class="navbar-nav">
       <h4 style="color:white;">E-Library</h4>
@@ -61,7 +61,7 @@
       </li> 
 -->
   
-      <a class="btn btn-secondary" href="userlogin.php" role = "button"> Log Out </a>
+      <a class="btn btn-secondary" href="user_log_out.php" role = "button"> Log Out </a>
 
 
 
