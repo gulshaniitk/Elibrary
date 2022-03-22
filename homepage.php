@@ -6,7 +6,7 @@ $adminid=$_SESSION['id'];
 
 if($adminid==null)
 {
-  header("location:adminlogin.php");
+  header("location:index.php");
 }
 
 ?>

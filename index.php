@@ -1,3 +1,33 @@
+<?php
+
+
+$ademailmsg="";
+$adpasswordmsg="";
+
+$useremailmsg="";
+$userpasswordmsg="";
+
+if(!empty($_GET['ademailmsg']))
+{
+  $ademailmsg=$_GET['ademailmsg'];
+}
+
+if(!empty($_GET['adpasswordmsg']))
+{
+  $adpasswordmsg=$_GET['adpasswordmsg'];
+}
+if(!empty($_GET['useremailmsg']))
+{
+  $ademailmsg=$_GET['useremailmsg'];
+}
+if(!empty($_GET['userpasswordmsg']))
+{
+  $adpasswordmsg=$_GET['userpasswordmsg'];
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -96,32 +126,36 @@ h1 {
   <h1 style="color: white;" class="text-center font-weight-bold">Welcome to Elibrary</h1>
             <div class="row">
                 <div class="col-md-6 login-form-1">
+                <form action="#" method="POST">
                     <h3  >User Login</h3>
                     
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            <input type="text" class="form-control" placeholder="Your Email *"  />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password" class="form-control" placeholder="Your Password *"  />
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <input type="submit" class="btnSubmit"  />
                         </div>
                         <div class="form-group">
                             <a href="#" class="btnForgetPwd">Forget Password?</a>
                         </div>
-                    
+                    </form>
                 </div>
                 <div class="col-md-6 login-form-2">
+                <form action="adminloginserver.php" method="POST">
                     <h3>Admin Login</h3>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            <input type="text" class="form-control" placeholder="Your Email *" name="email" />
+                            <label style="color: white;"><?php echo $ademailmsg; ?></label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password" class="form-control" placeholder="Your Password *" name="password" />
+                            <label style="color: white;"><?php echo $adpasswordmsg; ?></label>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <input type="submit" class="btnSubmit" name="login" />
                         </div>
                         <div class="form-group">
 
