@@ -26,9 +26,10 @@ body{
     margin-bottom: 5%;
 }
 .login-form-1{
-    padding: 9%;
+    padding: 5%;
     background:#282726;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    
 }
 .login-form-1 h3{
     text-align: center;
@@ -36,9 +37,10 @@ body{
     color:#fff;
 }
 .login-form-2{
-    padding: 9%;
+    padding: 5%;
     background: #f05837;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    
 }
 .login-form-2 h3{
     text-align: center;
@@ -63,7 +65,13 @@ body{
     text-decoration:none;
     color:#fff;
 }
-
+h1 {
+  font-size: 72px;
+  background-image: linear-gradient(60deg, #E21143, #FFB03A);
+ 
+ padding: 1%;
+ 
+}
     </style>
   </head>
   <body>
@@ -85,9 +93,10 @@ body{
 </div> -->
 
 <div class="container login-container">
+  <h1 style="color: white;" class="text-center font-weight-bold">Welcome to Elibrary</h1>
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <h3>User Login</h3>
+                    <h3  >User Login</h3>
                     
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Email *" value="" />
