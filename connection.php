@@ -13,7 +13,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
 
- 
   
 // $bookid=$_POST['bookid'];
 // $title=$_POST['title'];
