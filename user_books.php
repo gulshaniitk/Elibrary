@@ -1,3 +1,7 @@
+<?php
+include('connection.php');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,6 +13,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>User Home</title>
+
+    <style>
+body{
+    background-image: url('https://media.istockphoto.com/photos/books-picture-id949118068?k=20&m=949118068&s=612x612&w=0&h=e8tiaCdluEA9IS_I7ytStcx--toLbovf3U74v-LfNAk=');
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+    background-size: 100% 100%;
+    
+  backdrop-filter: blur(2px);
+
+}
+
+.table{
+    border: 2px;
+    border-color: red;
+    padding: 12px;
+    color: white;
+    background-color: #696969;
+    
+}
+
+
+
+</style>
   </head>
 
   
@@ -70,6 +98,49 @@
 
   </div>
 </nav>
+
+<div class="container" >
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Book Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Category</th>
+      <th scope="col">Pages</th>
+      <th scope="col">Year</th>
+      <th scope="col">Status</th>
+      <th scope="col">Link</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+$query="select * from books";
+$table=mysqli_query($conn,$query);
+$num=mysqli_num_rows($table);
+
+while($res=mysqli_fetch_array($table))
+{
+
+    ?>
+    <tr>
+      <td><?php echo $res['Bookid']; ?></td>
+      <td><?php echo $res['Title']; ?></td>
+      <td><?php echo $res['Author']; ?></td>
+      <td><?php echo $res['Publisher']; ?></td>
+      <td><?php echo $res['Category']; ?></td>
+      <td><?php echo $res['Pages']; ?></td>
+      <td><?php echo $res['Year']; ?></td>
+      <td><?php echo $res['Status']; ?></td>
+      <td><?php echo $res['Link']; ?></td>
+      
+    </tr>
+    <?php   } ?>
+  </tbody>
+</table>
+</div>
 
 
 
