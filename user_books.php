@@ -128,6 +128,14 @@ $num=mysqli_num_rows($table);
 while($res=mysqli_fetch_array($table))
 {
 
+  $flag=1;
+  if($res['Quantity']==0){
+    $flag=0;
+
+  }
+
+
+
     ?>
     <tr>
       <td><?php echo $res['Bookid']; ?></td>
@@ -137,10 +145,57 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['Category']; ?></td>
       <td><?php echo $res['Pages']; ?></td>
       <td><?php echo $res['Year']; ?></td>
-      <td><?php echo $res['Status']; ?></td>
+
+      <td>
+        
+        
+      <?php 
+      
+      if($flag==1){
+        echo "Available";
+      }
+      else {
+
+        echo "Not Available";
+
+      }
+      
+     ?>
+      </td>
       <td><?php echo $res['Link']; ?></td>
+      
       <td >
-        <a href="#" class="btn btn-info" >Issue</a></td>
+
+  
+        <?php
+      
+      if($flag==1){?>
+        <a href="user_issue.php" class="btn btn-info" >Issue</a>
+        
+        <?php
+      }
+
+      else {?>
+
+<button href="#" type="button" class="btn btn-info" disabled>Issue</button>
+
+<?php
+      }?>
+
+
+
+      
+
+
+
+        
+
+        
+      
+      
+      </td>
+
+        
         
         
      
