@@ -61,7 +61,7 @@ body{
           <a class="nav-link active" href="booksrecord.php.php">Books record</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orders.php.php">Orders</a>
+          <a class="nav-link" href="orders.php">Orders</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="students.php">Students</a>
@@ -75,9 +75,6 @@ body{
         
       </ul>
       <ul class="navbar-nav navbar-right ">
-        <li class="nav-item">
-          <a class="nav-link " href="contactus.php">Contact Us</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="editprofile.php">Edit Profile</a>
         </li>

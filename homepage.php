@@ -107,10 +107,10 @@ width:100%;
           <a class="nav-link active" aria-current="page" href="homepage.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="students.php">Books record</a>
+          <a class="nav-link" href="booksrecord.php">Books record</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="students.php">Orders</a>
+          <a class="nav-link" href="orders.php">Orders</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="students.php">Students</a>
@@ -124,9 +124,6 @@ width:100%;
         
       </ul>
       <ul class="navbar-nav navbar-right ">
-        <li class="nav-item">
-          <a class="nav-link " href="contactus.php">Contact Us</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="editprofile.php">Edit Profile</a>
         </li>
