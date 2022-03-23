@@ -46,6 +46,12 @@ body{
           <a class="nav-link " aria-current="page" href="homepage.php">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="booksrecord.php">Books record</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="orders.php">Orders</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="students.php">Students</a>
         </li>
         <li class="nav-item">
@@ -57,9 +63,6 @@ body{
         
       </ul>
       <ul class="navbar-nav navbar-right ">
-        <li class="nav-item">
-          <a class="nav-link " href="contactus.php">Contact Us</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">Edit Profile</a>
         </li>
