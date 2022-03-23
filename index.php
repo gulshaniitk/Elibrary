@@ -4,8 +4,8 @@
 $ademailmsg="";
 $adpasswordmsg="";
 
-$useremailmsg="";
-$userpasswordmsg="";
+$adroll_nomsg="";
+$apasswordmsg="";
 
 if(!empty($_GET['ademailmsg']))
 {
@@ -16,13 +16,13 @@ if(!empty($_GET['adpasswordmsg']))
 {
   $adpasswordmsg=$_GET['adpasswordmsg'];
 }
-if(!empty($_GET['useremailmsg']))
+if(!empty($_GET['adroll_nomsg']))
 {
-  $ademailmsg=$_GET['useremailmsg'];
+  $adroll_nomsg=$_GET['adroll_nomsg'];
 }
-if(!empty($_GET['userpasswordmsg']))
+if(!empty($_GET['apasswordmsg']))
 {
-  $adpasswordmsg=$_GET['userpasswordmsg'];
+  $apasswordmsg=$_GET['apasswordmsg'];
 }
 
 ?>
@@ -126,14 +126,16 @@ h1 {
   <h1 style="color: white;" class="text-center font-weight-bold">Welcome to Elibrary</h1>
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                <form action="#" method="POST">
+                <form action="userloginserver.php" method="POST">
                     <h3  >User Login</h3>
                     
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *"  />
+                            <input type="number"  name="rollno" class="form-control" placeholder="Your Roll Number"  />
+                            <label style="color: white;"><?php echo $adroll_nomsg; ?></label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *"  />
+                            <input type="password" name="password" class="form-control" placeholder="Your Password *"  />
+                            <label style="color: white;"><?php echo $apasswordmsg; ?></label>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btnSubmit"  />

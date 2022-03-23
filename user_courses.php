@@ -1,3 +1,7 @@
+<?php
+include('connection.php');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,6 +17,30 @@
 
   
   <body>
+
+  <style>
+body{
+    background-image: url('https://media.istockphoto.com/photos/books-picture-id949118068?k=20&m=949118068&s=612x612&w=0&h=e8tiaCdluEA9IS_I7ytStcx--toLbovf3U74v-LfNAk=');
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+    background-size: 100% 100%;
+    
+  backdrop-filter: blur(2px);
+
+}
+
+.table{
+    border: 2px;
+    border-color: red;
+    padding: 12px;
+    color: white;
+    background-color: #696969;
+    
+}
+
+
+
+</style>
     
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -70,6 +98,45 @@
 
   </div>
 </nav>
+
+<div class="container" style="margin-top:25px;" >
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Course Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Instructors</th>
+      <th scope="col">Year</th>
+      <th scope="col">Language</th>
+      <th scope="col">Skills</th>
+      <th scope="col">Link</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+$query="select * from courses";
+$table=mysqli_query($conn,$query);
+$num=mysqli_num_rows($table);
+
+while($res=mysqli_fetch_array($table))
+{
+
+    ?>
+    <tr>
+      <td><?php echo $res['courseid']; ?></td>
+      <td><?php echo $res['name']; ?></td>
+      <td><?php echo $res['instructors']; ?></td>
+      <td><?php echo $res['year']; ?></td>
+      <td><?php echo $res['language']; ?></td>
+      <td><?php echo $res['skills']; ?></td>
+      <td><?php echo $res['link']; ?></td>
+    
+    </tr>
+    <?php   } ?>
+  </tbody>
+</table>
+</div>
 
 
 

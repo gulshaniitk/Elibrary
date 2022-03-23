@@ -15,7 +15,7 @@ if($roll_no==NULL || $password==NULL)
      if($password==NULL)
      $passwordmsg="Password empty";
   
-    header("location:userlogin.php?adroll_nomsg=$roll_nomsg&adpasswordmsg=$passwordmsg");
+    header("location:index.php?adroll_nomsg=$roll_nomsg&apasswordmsg=$passwordmsg");
 }
 else
 {
@@ -31,7 +31,7 @@ else
     }
     else
     {
-         echo "<script>alert('Incorrect Email or Password ');window.location.href='userlogin.php';</script>";
+         echo "<script>alert('Incorrect Email or Password ');window.location.href='index.php';</script>";
     }
 
   

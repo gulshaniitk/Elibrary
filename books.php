@@ -117,7 +117,7 @@ body{
       <th scope="col">Category</th>
       <th scope="col">Pages</th>
       <th scope="col">Year</th>
-      <th scope="col">Status</th>
+      <th scope="col">Quantity</th>
       <th scope="col">Link</th>
       <th scope="col">Edit</th>
       <th scope="col">Delete</th>
@@ -141,7 +141,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['Category']; ?></td>
       <td><?php echo $res['Pages']; ?></td>
       <td><?php echo $res['Year']; ?></td>
-      <td><?php echo $res['Status']; ?></td>
+      <td><?php echo $res['Quantity']; ?></td>
       <td><?php echo $res['Link']; ?></td>
       <td >
         <a href="bookedit.php?bookid=<?php echo $res['Bookid']; ?>" class="btn btn-info" >Edit</a></td>

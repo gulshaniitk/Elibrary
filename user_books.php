@@ -53,7 +53,7 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-light" >
   <div class="container-fluid">
     <ul class="navbar-nav">
       <h4 style="color:white;">E-Library</h4>
@@ -99,7 +99,7 @@ body{
   </div>
 </nav>
 
-<div class="container" >
+<div class="container" style="margin-top:25px;" >
 <table class="table table-hover">
   <thead class="table-dark">
     <tr>
@@ -112,6 +112,10 @@ body{
       <th scope="col">Year</th>
       <th scope="col">Status</th>
       <th scope="col">Link</th>
+      <th scope="col">Issue</th>
+     
+      
+      
       
     </tr>
   </thead>
@@ -135,6 +139,11 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['Year']; ?></td>
       <td><?php echo $res['Status']; ?></td>
       <td><?php echo $res['Link']; ?></td>
+      <td >
+        <a href="#" class="btn btn-info" >Issue</a></td>
+        
+        
+     
       
     </tr>
     <?php   } ?>
