@@ -40,6 +40,22 @@ $res=mysqli_fetch_array($table);
   #ui label,h2{
     color: white;
   }
+  .table{
+    border: 2px;
+    border-color: grey;
+    padding: 12px;
+    color: white;
+    background-color: #333;
+    
+}
+
+tr:hover{
+  background-color: #777778;
+}
+
+#temp{
+  pointer-events: none;
+}
 
    </style>
 
@@ -154,9 +170,9 @@ $res=mysqli_fetch_array($table);
 
     <div class="container">
     <h2 style="text-align: center;">Books Issued</h2>
-    <table class="table table-hover" style="background:white;">
+    <table class="table table-hover" >
   <thead>
-    <tr>
+    <tr id="temp">
       <th scope="col">BookId</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
@@ -176,7 +192,7 @@ while($res=mysqli_fetch_array($table))
 {
 
     ?>
-    <tr>
+    <tr id="11">
       <td><?php echo $res['Bookid']; ?></td>
       <td><?php echo $res['Title']; ?></td>
       <td><?php echo $res['Author']; ?></td>
