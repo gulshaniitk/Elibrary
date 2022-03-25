@@ -58,7 +58,7 @@ try {
     );
 
     $mail->Username   = 'gulshanchoudharyjee@gmail.com';                     //SMTP username
-    $mail->Password   = 'gulshan09092000';                               //SMTP password
+    $mail->Password   = '****';                               //SMTP password
     //Recipients
 
     $mail->setFrom('gulshanchoudharyjee@gmail.com', 'Elibrary');
