@@ -1,5 +1,7 @@
 <?php
 include('connection.php');
+session_start();
+$rn=$_SESSION['rollno'];
 ?>
 
 <!doctype html>
@@ -128,7 +130,7 @@ $num=mysqli_num_rows($table);
 while($res=mysqli_fetch_array($table))
 {
 
-  $flag=1;
+  $flag=1; // book availabe
   if($res['Quantity']==0){
     $flag=0;
 
@@ -150,7 +152,13 @@ while($res=mysqli_fetch_array($table))
         
         
       <?php 
+
       
+
+
+
+
+       
       if($flag==1){
         echo "Available";
       }
@@ -168,16 +176,63 @@ while($res=mysqli_fetch_array($table))
 
   
         <?php
+
+$check="SELECT * FROM `issuebook` WHERE rollno='$rn' and bookid='$res[Bookid]' ";
+$query=mysqli_query($conn,$check);
+$flag2=1;  // book not issued
+
+if(mysqli_num_rows($query)==1){
+  $flag2=0; // book issued
+}
+
       
-      if($flag==1){?>
-        <a href="user_issue.php" class="btn btn-info" >Issue</a>
+
+//availabe and not issued
+      if($flag==1 and $flag2==1){?>         
+       
+    <a href="user_issue.php?id=<?php echo $res['Bookid'];?>" class='btn btn-success'>Issue</a>
+       <!-- <form action="user_issue.php" method="POST" >
+       
+
+       <?php
+       
+       ?>
+
+       
+
+
+       </form> -->
+
+        <!-- <a href="user_issue.php" class="btn btn-info" >Issue</a> -->
+        
         
         <?php
       }
+      
+
+// (availabe and issued) or (not availabe and issued)
+      else if(($flag==1 and $flag2==0) or ($flag==0 and $flag2==0)){
+
+        ?>
+
+        <button href="#" type="button" class="btn btn-info" disabled>Issued</button>
+
+
+
+
+        <?php
+      }
+
+
+// 
+
+
+
+
 
       else {?>
 
-<button href="#" type="button" class="btn btn-info" disabled>Issue</button>
+<!-- <button href="#" type="button" class="btn btn-danger" disabled>Issue</button> -->
 
 <?php
       }?>
