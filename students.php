@@ -93,25 +93,27 @@ body{
 
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-        <div id="std1">
         <div class="row">
             <div class="col-lg-4">
-            <a class="btn btn-primary btn-success " href="/elibrary/addstudent.php" role="button">Add New Student</a>
+            <a class="btn btn-primary btn-success " href="/elibrary/addstudent.php" role="button">Add student</a>
             </div>
             <div class="col-lg-3">
-            <a class="btn btn-primary btn-success " href="#" role="button">Edit Student</a>
-            </div>
-            <div class="col-lg-5">
-            <a class="btn btn-primary btn-success " href="#" role="button">Show status</a>
-            </div>
+
+</div>
+
+<div class="col-lg-5">
+  <form method="POST" action=" ">
+<div class="input-group">
+<input type="search" class="form-control rounded" placeholder="Search" name="search" aria-label="Search" aria-describedby="search-addon" required/>
+<button class="btn btn-success" type="submit" name="submit">
+<i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+</button>
+</div>
+</form>
+</div>
         </div>
-        </div>
-        </div>
-        <div class="col-lg-3"></div>
-    </div>
+       
+    
 </div>
 <br>
 <div class="container" >
@@ -132,7 +134,18 @@ body{
   </thead>
   <tbody>
   <?php
+  if(isset($_POST['submit']))
+  {
+    $str=$_POST['search'];
+    
+    $query="select * from students where rollno like '%$str%' or firstname like '%$str%' or lastname like '%$str%' or contactno like '%$str%' or email like '%$str%' or address like '%$str%' or dob like '%$str%'  ";
+    
+  
+  }
+  else
+  {
 $query="select * from students";
+  }
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
 

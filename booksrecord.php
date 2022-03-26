@@ -87,6 +87,26 @@ body{
   </div>
 </nav>
 <br>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+            
+            <div class="col-lg-5">
+              <form method="POST" action=" ">
+            <div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" name="search" aria-label="Search" aria-describedby="search-addon" required />
+  <button class="btn btn-success" type="submit" name="submit">
+<i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+</button>
+</div>
+</form>
+        </div>
+    </div>
+</div>
 <br>
 <div class="container" >
 <table class="table table-hover">
@@ -105,7 +125,19 @@ body{
   </thead>
   <tbody>
   <?php
+  if(isset($_POST['submit']))
+  {
+    $str=$_POST['search'];
+   
+    $query="select * from issuebook where id like '%$str%' or rollno like '%$str%' or bookid like '%$str%' or issuedate like '%$str%' or returndate like '%$str%' or  issuedays like '%$str%'  ";
+   
+  
+  }
+  else
+  {
 $query="select * from issuebook";
+  }
+
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
 

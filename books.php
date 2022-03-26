@@ -88,26 +88,27 @@ body{
 </nav>
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-        <div id="std1">
         <div class="row">
             <div class="col-lg-4">
-            <a class="btn btn-primary btn-success " href="/elibrary/addbook.php" role="button">Add New Book</a>
+            <a class="btn btn-primary btn-success " href="/elibrary/addbook.php" role="button">Add book</a>
             </div>
             <div class="col-lg-3">
-            <a class="btn btn-primary btn-success " href="#" role="button">Edit Book</a>
-            </div>
-            <div class="col-lg-5">
-            <a class="btn btn-primary btn-success " href="#" role="button">Show status</a>
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-lg-3"></div>
-    </div>
+
 </div>
+
+<div class="col-lg-5">
+  <form method="POST" action=" ">
+<div class="input-group">
+<input type="search" class="form-control rounded" placeholder="Search" name="search" aria-label="Search" aria-describedby="search-addon" required/>
+<button class="btn btn-success" type="submit" name="submit">
+<i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+</button>
+</div>
+</form>
+</div>
+        </div>
+</div>
+
 <br>
 <div class="container" >
 <table class="table table-hover">
@@ -128,7 +129,19 @@ body{
   </thead>
   <tbody>
   <?php
+  if(isset($_POST['submit']))
+  {
+    $str=$_POST['search'];
+   
+    $query="select * from books where Bookid like '%$str%' or Title like '%$str%' or Author like '%$str%' or Publisher like '%$str%' or Category like '%$str%' or  Year like '%$str%'  ";
+   
+  
+  }
+  else
+  {
 $query="select * from books";
+  }
+
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
 
