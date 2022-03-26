@@ -1,30 +1,4 @@
-<?php
 
-// use PHPMailer\PHPMailer\PHPMailer;
-
-
-// require ('PHPMailer-master/PHPMailer-master/src/PHPMailer.php');
-
-// $message_body="One Time Password for PHP login authentication is: <br/><br/>".$otp;
-// $mail=new PHPMailer();
-// $mail->addReplyTo('gulshanchoudharyjee@gmail.com','Gulshan Kumar');
-// $mail->setFrom('gulshanchoudharyjee@gmail.com','Gulshan Kumar');
-// $mail->addAddress($email);
-// $mail->msgHTML($message_body);
-// $result=$email->send();
-// if(!$result)
-// {
-//     echo "Mailer Error: ".$mail->ErrorInfo;
-// }
-// else
-// {
-//     echo "<script>alert('otp sent successfully');window.location.href='admin_email_verify.php';</script>";
-// }
-
-
-
-
-?>
 
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
@@ -35,12 +9,17 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 function sendOTP($email,$otp)
-{ $message_body="Your One Time Password for PHP login authentication is: <br/>".$otp;
+{ $message_body="Dear Sir / Madam,
+
+    Your One Time Password(OTP) is :<br><br>".$otp."
+    
+    <br><br>Your OTP will expire in 15 min.<br><br>Do not share your OTP with anyone. <br/>";
 $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;               //Enable verbose debug output
+    $mail->SMTPDebug = 0;               //Enable verbose debug output
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;               //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -58,7 +37,7 @@ try {
     );
 
     $mail->Username   = 'gulshanchoudharyjee@gmail.com';                     //SMTP username
-    $mail->Password   = 'gulshan09092000';                               //SMTP password
+    $mail->Password   = '******';                               //SMTP password
     //Recipients
 
     $mail->setFrom('gulshanchoudharyjee@gmail.com', 'Elibrary');
@@ -80,7 +59,7 @@ try {
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Message has been sent';
+     echo "<script>alert('Otp sent succesfully to your email');</script>";
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

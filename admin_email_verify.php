@@ -3,31 +3,69 @@ include 'connection.php';
 include 'mail_function.php';
 date_default_timezone_set("Asia/Kolkata");
 
-$success="";
+$success=0;
 $error_message="";
+$msg="";
+$emailmsg="";
 
 if(isset($_POST['send']))
  {  
-    // $sql="select * from adminlogin where email='$_POST[email]'";
-    // $result=mysqli_query($conn,$sql);
-    // $count=mysqli_num_rows($result);
+    $sql="select * from adminlogin where email='$_POST[email]'";
+    $result=mysqli_query($conn,$sql);
+    $count=mysqli_num_rows($result);
+    
+    if($count==1)
+     {  $email=$_POST['email'];
+        $otp=rand(100000,999999);
+        $mail_status=sendOTP($_POST['email'],$otp);
+        $del=mysqli_query($conn,"DELETE FROM `otp_expiry` WHERE email='$_POST[email]'");
+        $res=mysqli_query($conn,"INSERT INTO `otp_expiry`( `otp`, `email`) VALUES ('$otp','$_POST[email]')" );
+        $success=1;
+    }
+    else
+    {
+       $emailmsg="*Email does not exist in database";
+       $success=0;
+    }
 
-    // if($count>0)
-    // {
-    //     $otp=rand(100000,999999);
-    //     $mail_status=sendOTP($_POST['email'],$otp);
-    // }
-    // else
-    // {
-    //     echo "Please enter correct email";
-    // }
 
-
-    $otp=rand(100000,999999);
-    $mail_status=sendOTP($_POST['email'],$otp);
     
 
+}
 
+if(isset($_POST['submit_otp']))
+{  
+    $sql="select * from otp_expiry where otp='$_POST[otp]' and email='$_POST[email]' and now()<=date_add(create_at,interval 15 minute)";
+    $result=mysqli_query($conn,$sql);
+    $num=mysqli_num_rows($result);
+    $email=$_POST['email'];
+    if($num==1)
+    {
+        $success=2;
+    }
+    else
+    {
+        $success=1;
+        $error_message="*Invalid OTP!";
+    }
+    
+
+}
+
+if(isset($_POST['changepass']))
+{  $error_message="";
+    if($_POST['password']!=$_POST['cpassword'])
+    {
+          $msg="*Password should be same as entered above!";
+          $success=2;
+    }
+   else
+    {   
+        $psd=mysqli_query($conn,"update adminlogin set password='$_POST[password]' where email='$_POST[email]'");
+
+        echo "<script>alert('Password changed successfully');window.location.href='index.php';</script>";
+       
+    }
 }
 
 ?>
@@ -80,17 +118,56 @@ if(isset($_POST['send']))
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                     <span class="h1 fw-bold mb-0">Elibrary</span>
+                  
+                    <?php  if($success==1)
+                        { 
+                    ?>
+                       </div>
+
+<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre OTP</h5>
+
+<div class="form-outline mb-4">
+  <input type="number" id="adminname" class="form-control form-control-lg" placeholder="Enter the otp sent to your email" name="otp" />
+  <input type="text" id="adminname" class="form-control form-control-lg" value="<?php echo $email; ?>" name="email" hidden />
+  <label style="color: red;" ><?php echo $error_message; ?></label>
+</div>
+<div class="pt-1 mb-4">
+  <button class="btn btn-dark btn-lg btn-block" type="submit" name="submit_otp">Submit otp</button>
+</div>
+
+                      <?php } 
+                      else if($success==2)
+                      { 
+                         
+                      ?>
+                       </div>
+
+<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre New Password</h5>
+
+<div class="form-outline mb-4">
+  <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Enter password" name="password" required />
+  <input type="text" id="adminname" class="form-control form-control-lg" name="email" value="<?php echo $email; ?>" hidden />
+  <br>
+  <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Confirm password" name="cpassword" required />
+  <label style="color: red;"><?php echo $msg ?></label>
+  <!-- <label class="form-label" for="form2Example17">Email</label> -->
+</div>
+<div class="pt-1 mb-4">
+  <button class="btn btn-dark btn-lg btn-block" type="submit" name="changepass">Change Password</button>
+</div>
+                    <?php } if($success==0) { ?>
                   </div>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre your Email</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Enter your email" name="email" />
-                    <!-- <label class="form-label" for="form2Example17">Email</label> -->
+                    <input type="text" id="adminname" class="form-control form-control-lg"  name="email" required/>
+                   <label style="color: red;" ><?php echo $emailmsg; ?></label>
                   </div>
                   <div class="pt-1 mb-4">
                     <button class="btn btn-dark btn-lg btn-block" type="submit" name="send">Send otp</button>
                   </div>
+                  <?php } ?>
                 </form>
 
               </div>
