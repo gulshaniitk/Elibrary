@@ -52,11 +52,11 @@ body{
 }
 
 .login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 .login-form-1{
-    padding: 5%;
+    padding: 3%;
     background:#282726;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     
@@ -67,7 +67,7 @@ body{
     color:#fff;
 }
 .login-form-2{
-    padding: 5%;
+    padding: 3%;
     background: #f05837;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     
@@ -97,9 +97,9 @@ body{
 }
 h1 {
   font-size: 72px;
-  background-image: linear-gradient(60deg, #E21143, #FFB03A);
+  /* background-image: linear-gradient(60deg, #E21143, #FFB03A); */
  
- padding: 1%;
+ padding: 0%;
  
 }
     </style>
@@ -142,6 +142,8 @@ h1 {
                         </div>
                         <div class="form-group">
                             <a href="#" class="btnForgetPwd">Forget Password?</a>
+                            <br><br>
+                            <a href="#" class="btnForgetPwd">New User?</a>
                         </div>
                     </form>
                 </div>
@@ -161,7 +163,7 @@ h1 {
                         </div>
                         <div class="form-group">
 
-                            <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
+                            <a href="admin_email_verify.php" class="btnForgetPwd" value="Login">Forget Password?</a>
                         </div>
                     </form>
                 </div>

@@ -38,7 +38,46 @@ include('connection.php');
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h3 class="navbar-brand" >Elibrary</h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="homepage.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booksrecord.php">Books record</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="orders.php">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="students.php">Students</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="books.php">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="courses.php">Courses</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav navbar-right ">
+        <li class="nav-item">
+          <a class="nav-link" href="editprofile.php">Edit Profile</a>
+        </li>
+        <li><a href="logout.php" class="btn btn-info ">
+          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       
+        
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container">
         <div class="row">
             <div class="col-lg-3"></div>
@@ -85,7 +124,7 @@ if(isset($_POST['submit']))
     $sql="insert into courses(name,instructors,skills,year,link,language) values ('$_POST[name]','$_POST[instructors]','$_POST[skills]','$_POST[year]','$_POST[link]','$_POST[language]')";
    
 if (mysqli_query($conn,$sql) === TRUE) {
-  echo "<script>alert('New course added successfully');</script>";
+  echo "<script>alert('New course added successfully');window.location.href='courses.php';</script>";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
