@@ -35,6 +35,7 @@ try {
             'allow_self_signed' => true
         )
     );
+    
 
     $mail->Username   = 'gulshanchoudharyjee@gmail.com';                     //SMTP username
     $mail->Password   = '******';                               //SMTP password
