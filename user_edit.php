@@ -66,51 +66,41 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <ul class="navbar-nav">
-      <h4 style="color:white;">E-Library</h4>
-      <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="home_user.php">Home</a>
-      </li>
-     <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_books.php">Books</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_courses.php">Courses</a>
-      </li>
-
- 
-
-      
-      
-
-      
-    </ul>
-
-    <ul class="nav justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link active" style="color:white;" aria-current="page" href="user_edit.php">Edit Profile</a>
-      </li>
-
-    <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="contact_us.php">Contact Us</a>
-      </li>
-
-   <!--   <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="#">Log Out</a>
-      </li> 
--->
-  
-      <a class="btn btn-danger"href="user_log_out.php" role = "button"> Log Out </a>
-
-
-
-</ul>
-
-
+    <h3 class="navbar-brand" >Elibrary</h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="home_user.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="user_books.php">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="user_courses.php">Courses</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav navbar-right ">
+        <li class="nav-item">
+          <a class="nav-link active" href="user_edit.php">Edit Profile</a>
+        </li>
+        <li><a href="user_log_out.php" class="btn btn-danger ">
+          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       
+        
+      </ul>
+    </div>
   </div>
 </nav>
+
 
 
 <div class="container">
