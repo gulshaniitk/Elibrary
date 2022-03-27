@@ -155,7 +155,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['Pages']; ?></td>
       <td><?php echo $res['Year']; ?></td>
       <td><?php echo $res['Quantity']; ?></td>
-      <td><?php echo $res['Link']; ?></td>
+      <td><a target="_blank" href="<?php echo $res['Link']; ?>" class="btn btn-primary" >Visit</a></td>
       <td >
         <a href="bookedit.php?bookid=<?php echo $res['Bookid']; ?>" class="btn btn-info" >Edit</a></td>
         <td>
