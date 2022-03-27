@@ -101,6 +101,26 @@ body{
   </div>
 </nav>
 
+<br>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+
+</div>
+
+<div class="col-lg-5">
+  <form method="POST" action=" ">
+<div class="input-group">
+<input type="search" class="form-control rounded" placeholder="Search" name="search" aria-label="Search" aria-describedby="search-addon" required/>
+<button class="btn btn-success" type="submit" name="submit">
+<i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+</button>
+</div>
+</form>
+</div>
+        </div>
+</div>
+
 <div class="container" style="margin-top:25px;" >
 <table class="table table-hover">
   <thead class="table-dark">
@@ -123,7 +143,19 @@ body{
   </thead>
   <tbody>
   <?php
+
+if(isset($_POST['submit']))
+{
+  $str=$_POST['search'];
+ 
+  $query="select * from books where Bookid like '%$str%' or Title like '%$str%' or Author like '%$str%' or Publisher like '%$str%' or Category like '%$str%' or  Year like '%$str%'  ";
+ 
+
+}
+else
+{
 $query="select * from books";
+}
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
 
