@@ -202,7 +202,7 @@ while($res=mysqli_fetch_array($table))
       
      ?>
       </td>
-      <td><?php echo $res['Link']; ?></td>
+      <td><a target="_blank" href="<?php echo $res['Link']; ?>" class="btn btn-primary">Visit</a></td>
       
       <td >
 

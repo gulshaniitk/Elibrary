@@ -164,7 +164,8 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['year']; ?></td>
       <td><?php echo $res['language']; ?></td>
       <td><?php echo $res['skills']; ?></td>
-      <td><?php echo $res['link']; ?></td>
+      <td><a target="_blank" href="<?php echo $res['link']; ?>" class="btn btn-primary">Visit</a></td>
+     
     
     </tr>
     <?php   } ?>
