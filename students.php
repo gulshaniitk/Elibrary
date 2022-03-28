@@ -65,9 +65,6 @@ body{
           <a class="nav-link" href="booksrecord.php">Books record</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orders.php">Orders</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link active" href="students.php">Students</a>
         </li>
         <li class="nav-item">

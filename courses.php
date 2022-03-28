@@ -63,9 +63,6 @@ body{
           <a class="nav-link " href="booksrecord.php">Books record</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orders.php">Orders</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="students.php">Students</a>
         </li>
         <li class="nav-item">
@@ -159,7 +156,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['year']; ?></td>
       <td><?php echo $res['language']; ?></td>
       <td><?php echo $res['skills']; ?></td>
-      <td><?php echo $res['link']; ?></td>
+      <td><a target="_blank" href="<?php echo $res['link']; ?>" class="btn btn-primary">Visit</a></td>
       <td><a href="courseedit.php?cid=<?php echo $res['courseid']; ?>" class="btn btn-info">Edit</a></td>
       <td><a href="coursedelete.php?cid=<?php echo $res['courseid']; ?>" class="btn btn-danger">Delete</a></td>
     </tr>
