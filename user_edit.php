@@ -71,53 +71,7 @@ body{
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <ul class="navbar-nav">
-      <h4 style="color:white;">E-Library</h4>
-      <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="home_user.php">Home</a>
-      </li>
-     <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_books.php">Books</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_courses.php">Courses</a>
-      </li>
 
- 
-
-      
-      
-
-      
-    </ul>
-
-    <ul class="nav justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link active" style="color:white;" aria-current="page" href="user_edit.php">Edit Profile</a>
-      </li>
-
-    <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="contact_us.php">Contact Us</a>
-      </li>
-
-   <!--   <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="#">Log Out</a>
-      </li> 
--->
-  
-      <a class="btn btn-danger"href="user_log_out.php" role = "button"> Log Out </a>
-
-
-
-</ul>
-
-
-=======
->>>>>>> 97f448a82d8cb7c8dd0ac85610d80204d37842a1
-=======
->>>>>>> 97f448a82d8cb7c8dd0ac85610d80204d37842a1
     <h3 class="navbar-brand" >Elibrary</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
