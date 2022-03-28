@@ -86,7 +86,7 @@ body{
     border-radius: 1.5rem;
     padding:2%;
 }
-.btnForgetPwd{
+.btnForgetPwd,p{
     color: #fff;
     font-weight: 600;
     text-decoration: none;
@@ -102,6 +102,7 @@ h1 {
  padding: 0%;
  
 }
+
     </style>
   </head>
   <body>
@@ -143,7 +144,8 @@ h1 {
                         <div class="form-group">
                             <a href="#" class="btnForgetPwd">Forget Password?</a>
                             <br><br>
-                            <a href="#" class="btnForgetPwd">New User?</a>
+                            <p>Not a member? <a href="user_register.php" class="text-white-50 fw-bold" >Register</a></p>
+                            <!-- <a href="#" class="btnForgetPwd">New User?</a> -->
                         </div>
                     </form>
                 </div>

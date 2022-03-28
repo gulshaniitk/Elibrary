@@ -91,7 +91,7 @@ body{
       </li> 
 -->
   
-      <a class="btn btn-secondary" href="user_log_out.php" role = "button"> Log Out </a>
+      <a class="btn btn-danger" href="user_log_out.php" role = "button"> Log Out </a>
 
 
 
@@ -115,6 +115,7 @@ body{
       <th scope="col">Status</th>
       <th scope="col">Link</th>
       <th scope="col">Issue</th>
+      <th scope="col">Return</th>
      
       
       
@@ -248,8 +249,35 @@ if(mysqli_num_rows($query)==1){
         
       
       
+      
+
+
       </td>
 
+      <td>
+
+      <?php
+
+if(($flag==1 and $flag2==0) or ($flag==0 and $flag2==0)){
+  ?>
+
+  <a href="user_return.php?id1=<?php echo $res['Bookid'];?>" type="button" class="btn btn-primary" >Return</a>
+
+
+  <?php
+
+}
+
+
+
+  
+
+      ?>
+
+
+
+
+      </td>
         
         
         
