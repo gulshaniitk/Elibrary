@@ -71,6 +71,7 @@ body{
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
+<<<<<<< HEAD
     <ul class="navbar-nav">
       <h4 style="color:white;">E-Library</h4>
       <li class="nav-item">
@@ -112,6 +113,8 @@ body{
 </ul>
 
 
+=======
+>>>>>>> 97f448a82d8cb7c8dd0ac85610d80204d37842a1
     <h3 class="navbar-brand" >Elibrary</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
