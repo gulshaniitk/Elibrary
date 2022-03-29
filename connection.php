@@ -13,27 +13,20 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
 
+function cal_fine($return_date)
+{
+   $today=date('Y-m-d');
+   
+   
+   $diff = strtotime($today) - strtotime($return_date);
+
+   if($diff<=0) return 0;
+
+$years = floor($diff / (365*60*60*24));
+$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+   return abs($days);
+
+}
   
-// $bookid=$_POST['bookid'];
-// $title=$_POST['title'];
-// $publisher=$_POST['publisher'];
-// $pages=$_POST['pages'];
-// $year=$_POST['year'];
-// $category=$_POST['category'];
-// $author=$_POST['author'];
-// $language=$_POST['language'];
-// $status=$_POST['status'];
-// $link=$_POST['link'];
-
-
-// $sql = "INSERT INTO books (Bookid,Title,Publisher,Pages,Year,Category,Author,Language,Status,Link)
-// VALUES ('$bookid','$title','$publisher','$pages','$year','$category','$author','$language','$status','$link')";
-
-// if (mysqli_query($conn,$sql) === TRUE) {
-//   echo "New record created successfully";
-// } else {
-//   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-// }
-
-// mysqli_close($conn);
 ?>

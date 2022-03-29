@@ -149,7 +149,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['issuedate']; ?></td>
       <td><?php echo $res['returndate']; ?></td>
       <td><?php echo $res['issuedays']; ?></td>
-      <td><?php echo 0; ?></td>
+      <td><?php echo cal_fine($res['returndate']); ?></td>
       <td >
       <a href="booksrecorddelete.php?id=<?php echo $res['id'] ?> ?>" class="btn btn-danger" >Delete</a>
       </td>
