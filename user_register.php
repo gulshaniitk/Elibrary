@@ -37,7 +37,7 @@ body{
 #ui{
     background-color: #333;
     padding: 30px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 30px;
     border-radius: 10px;
     opacity: 0.8;
@@ -65,6 +65,21 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
+    <br>
+
+
+   <div class="container"> 
+     <div class="row">
+   <div class="col-lg-3"></div>
+
+   <div class="col-lg-6">
+    <a href="index.php" class="btn btn-primary">Home</a>
+</div>
+
+<div class="col-lg-3"></div>
+</div>
+
+   </div>
 
 
 <div class="container">

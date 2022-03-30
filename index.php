@@ -142,7 +142,7 @@ h1 {
                             <input type="submit" class="btnSubmit"  />
                         </div>
                         <div class="form-group">
-                            <a href="#" class="btnForgetPwd">Forget Password?</a>
+                            <a href="user_forget_password.php" class="btnForgetPwd">Forget Password?</a>
                             <br><br>
                             <p>Not a member? <a href="user_register.php" class="text-white-50 fw-bold" >Register</a></p>
                             <!-- <a href="#" class="btnForgetPwd">New User?</a> -->

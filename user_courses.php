@@ -1,5 +1,14 @@
 <?php
 include('connection.php');
+session_start();
+$rn=$_SESSION['rollno'];
+
+
+
+if($rn==null){
+  header("location:index.php");
+  
+}
 ?>
 
 <!doctype html>

@@ -2,6 +2,14 @@
 include('connection.php');
 session_start();
 $rn=$_SESSION['rollno'];
+
+
+
+
+if($rn==null){
+  header("location:index.php");
+  
+}
 $sql="select * from students where rollno='$rn'";
 $table=mysqli_query($conn,$sql);
 $res=mysqli_fetch_array($table);

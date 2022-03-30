@@ -37,8 +37,8 @@ try {
     );
     
 
-    $mail->Username   = 'gulshanchoudharyjee@gmail.com';                     //SMTP username
-    $mail->Password   = '******';                               //SMTP password
+    $mail->Username   = 'elibraryiitk@gmail.com';                     //SMTP username
+    $mail->Password   = 'gulshan_rajat';                               //SMTP password
     //Recipients
 
     $mail->setFrom('gulshanchoudharyjee@gmail.com', 'Elibrary');

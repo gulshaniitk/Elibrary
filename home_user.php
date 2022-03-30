@@ -2,7 +2,14 @@
 include('connection.php');
 session_start();
 $rn=$_SESSION['rollno'];
+
+
+if($rn==null){
+  header("location:index.php");
+  
+}
 $sql="select * from students where rollno='$rn'";
+
 $table=mysqli_query($conn,$sql);
 $res=mysqli_fetch_array($table);
 ?>
@@ -186,7 +193,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['Author']; ?></td>
       <td><?php echo $res['issuedate']; ?></td>
       <td><?php echo $res['returndate']; ?></td>
-      <td><?php echo 10; ?></td>
+      <td><?php echo cal_fine($res['returndate']); ?></td>
      
       
     </tr>
