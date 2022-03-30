@@ -1,7 +1,7 @@
 <?php 
 include('connection.php');
-session_start();
-$rn=$_SESSION['rollno'];
+$rn=$_GET['rn'];
+$id=$_GET['id'];
 $sql="select * from students where rollno='$rn'";
 $table=mysqli_query($conn,$sql);
 $res=mysqli_fetch_array($table);
@@ -15,11 +15,7 @@ $sql3="select * from books where Bookid='$bookid'";
 $table3=mysqli_query($conn,$sql3);
 $res3=mysqli_fetch_array($table3);
 
-
-
-
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,20 +25,17 @@ $res3=mysqli_fetch_array($table3);
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Issue Form</title>
-
-    <style>
-body{
+   <style>
+     body{
     background-image: url('https://media.istockphoto.com/photos/books-picture-id949118068?k=20&m=949118068&s=612x612&w=0&h=e8tiaCdluEA9IS_I7ytStcx--toLbovf3U74v-LfNAk=');
     background-repeat: no-repeat;
     background-attachment:fixed ;
+    background-position: center center;
     background-size: 100% 100%;
-    
+    color: white;
   backdrop-filter: blur(2px);
-
-}
-#ui{
+     }
+  #ui{
     background-color: #333;
     padding: 30px;
     margin-top: 30px;
@@ -52,74 +45,63 @@ body{
   }
 
   #ui label,h2{
-    color: #fff;
+    color: white;
   }
 
-</style>
-
-  </head>
-
-  
-  <body>
+  .table2{
+    border: 2px;
+    border-color: red;
+    padding: 12px;
+    color: white;
+    background-color: #696969;
     
-    <!-- Optional JavaScript; choose one of the two! -->
+}
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+   </style>
+    
+  </head>
+  <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <ul class="navbar-nav">
-      <h4 style="color:white;">E-Library</h4>
-      <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="home_user.php">Home</a>
-      </li>
-     <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_books.php">Books</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_courses.php">Courses</a>
-      </li>
-
- 
-
-      
-      
-
-      
-    </ul>
-
-    <ul class="nav justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link active" style="color:white;" aria-current="page" href="user_edit.php">Edit Profile</a>
-      </li>
-
-    <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="contact_us.php">Contact Us</a>
-      </li>
-
-   <!--   <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="#">Log Out</a>
-      </li> 
--->
-  
-      <a class="btn btn-danger" href="user_log_out.php" role = "button"> Log Out </a>
-
-
-
-</ul>
-
-
+    <h3 class="navbar-brand" >Elibrary</h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="homepage.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="booksrecord.php">Books record</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="students.php">Students</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="books.php">Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="courses.php">Courses</a>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav navbar-right ">
+        <li class="nav-item">
+          <a class="nav-link" href="editprofile.php">Edit Profile</a>
+        </li>
+        <li><a href="logout.php" class="btn btn-info ">
+          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       
+        
+      </ul>
+    </div>
   </div>
 </nav>
-
-
 <div class="container">
         <div class="row">
             <div class="col-lg-3"></div>
@@ -252,7 +234,7 @@ $quant2=mysqli_query($conn,$q2);
    
     
 if (mysqli_query($conn,$temp) ===TRUE ) {
-  echo "<script>alert('Book Issued Successfully');window.location.href='user_books.php';</script>";
+  echo "<script>alert('Book Issued Successfully');window.location.href='issuebook.php?rn=$rn';</script>";
 
 } else {
   echo "Error: " . $temp . "<br>" . mysqli_error($conn);
@@ -264,6 +246,7 @@ if (mysqli_query($conn,$temp) ===TRUE ) {
 
 
 
+   
 
   </body>
 </html>
