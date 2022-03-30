@@ -151,13 +151,23 @@ if($adminid==null)
 
     <?php 
 if(isset($_POST['submit']))
-{  
+{ 
+  $q1="SELECT * FROM `students` WHERE rollno='$_POST[rollno]'";
+  $table=mysqli_query($conn,$q1);
+
+  if(mysqli_num_rows($table)==1){
+    echo "<script>alert('Student already exist');window.location.href='addstudent.php';</script>";
+
+  }
+ else 
+{
     $sql="insert into students(rollno,firstname,lastname,contactno,email,address,gender,age,dob) values ('$_POST[rollno]','$_POST[fname]','$_POST[lname]','$_POST[contactno]','$_POST[email]','$_POST[address]','$_POST[gender]','$_POST[age]','$_POST[dob]')";
    
 if (mysqli_query($conn,$sql) === TRUE) {
   echo "<script>alert('New record added successfully');window.location.href='students.php';</script>";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 }
 
 }

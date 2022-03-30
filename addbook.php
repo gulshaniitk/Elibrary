@@ -145,13 +145,24 @@ if($adminid==null)
 
     <?php 
 if(isset($_POST['submit']))
-{  
-    $sql="insert into books(Bookid,Title,Author,Publisher,Category,Pages,Year,Quantity,Link,Language) values ('$_POST[bookid]','$_POST[title]','$_POST[author]','$_POST[publisher]','$_POST[category]','$_POST[pages]','$_POST[year]','$_POST[quantity]','$_POST[link]','$_POST[language]')";
+{ 
+  
+  $q1="SELECT * FROM `books` WHERE Bookid='$_POST[bookid]'";
+  $table=mysqli_query($conn,$q1);
+
+  if(mysqli_num_rows($table)==1){
+    echo "<script>alert('Book already exist');window.location.href='addbook.php';</script>";
+
+  }
+ else
+{    $sql="insert into books(Bookid,Title,Author,Publisher,Category,Pages,Year,Quantity,Link,Language) values ('$_POST[bookid]','$_POST[title]','$_POST[author]','$_POST[publisher]','$_POST[category]','$_POST[pages]','$_POST[year]','$_POST[quantity]','$_POST[link]','$_POST[language]')";
    
 if (mysqli_query($conn,$sql) === TRUE) {
   echo "<script>alert('New book added successfully');window.location.href='books.php';</script>";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
 }
 
 }
