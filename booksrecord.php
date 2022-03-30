@@ -1,5 +1,15 @@
 <?php
 include('connection.php');
+
+session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
+
 ?>
 
 <!doctype html>
@@ -151,7 +161,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['issuedays']; ?></td>
       <td><?php echo cal_fine($res['returndate']); ?></td>
       <td >
-      <a href="booksrecorddelete.php?id=<?php echo $res['id'] ?> ?>" class="btn btn-danger" >Delete</a>
+      <a href="booksrecorddelete.php?id=<?php echo $res['id'] ?> ?>" class="btn btn-danger" >Return</a>
       </td>
     </tr>
     <?php   } ?>

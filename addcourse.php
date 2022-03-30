@@ -1,5 +1,15 @@
 <?php 
 include('connection.php');
+
+session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -118,6 +128,16 @@ include('connection.php');
     <?php 
 if(isset($_POST['submit']))
 {  
+
+  $q1="SELECT * FROM `courses` WHERE name='$_POST[name]'";
+  $table=mysqli_query($conn,$q1);
+
+  if(mysqli_num_rows($table)>0){
+    echo "<script>alert('Course already exist');window.location.href='addcourse.php';</script>";
+
+  }
+ else
+{
     $sql="insert into courses(name,instructors,skills,year,link,language) values ('$_POST[name]','$_POST[instructors]','$_POST[skills]','$_POST[year]','$_POST[link]','$_POST[language]')";
    
 if (mysqli_query($conn,$sql) === TRUE) {
@@ -126,6 +146,7 @@ if (mysqli_query($conn,$sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
+}
 }
 
 ?>

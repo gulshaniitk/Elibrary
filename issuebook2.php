@@ -1,5 +1,15 @@
 <?php 
 include('connection.php');
+
+session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
+
 $rn=$_GET['rn'];
 $id=$_GET['id'];
 $sql="select * from students where rollno='$rn'";
