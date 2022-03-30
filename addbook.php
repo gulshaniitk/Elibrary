@@ -1,5 +1,15 @@
 <?php 
 include('connection.php');
+
+session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -108,7 +118,7 @@ include('connection.php');
                 <div class="row">
                   <div class="col-lg-4">
                     <label>Year:</label>
-                    <input type="date" name="year" class="form-control" required>
+                    <input type="number" name="year" class="form-control" required>
                   </div>
                   <div class="col-lg-4">
                     <label>Language:</label>
@@ -116,11 +126,8 @@ include('connection.php');
 
                   </div>
                   <div class="col-lg-4">
-                  <label>Status:</label>
-                    <select class="form-control" name="status">
-                      <option value="available" selected>Available</option>
-                      <option value="not available">Not available</option>
-                    </select>
+                  <label>Quantity:</label>
+                  <input type="number" name="quantity" class="form-control" required>
                   </div>
                 </div>
                 <br>
@@ -139,7 +146,7 @@ include('connection.php');
     <?php 
 if(isset($_POST['submit']))
 {  
-    $sql="insert into books(Bookid,Title,Author,Publisher,Category,Pages,Year,Status,Link,Language) values ('$_POST[bookid]','$_POST[title]','$_POST[author]','$_POST[publisher]','$_POST[category]','$_POST[pages]','$_POST[year]','$_POST[status]','$_POST[link]','$_POST[language]')";
+    $sql="insert into books(Bookid,Title,Author,Publisher,Category,Pages,Year,Quantity,Link,Language) values ('$_POST[bookid]','$_POST[title]','$_POST[author]','$_POST[publisher]','$_POST[category]','$_POST[pages]','$_POST[year]','$_POST[quantity]','$_POST[link]','$_POST[language]')";
    
 if (mysqli_query($conn,$sql) === TRUE) {
   echo "<script>alert('New book added successfully');window.location.href='books.php';</script>";

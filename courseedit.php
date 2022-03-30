@@ -1,5 +1,15 @@
 <?php 
 include('connection.php');
+
+session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
+
 $cid=$_GET['cid'];
 $sql="select * from courses where courseid=$cid";
 $table=mysqli_query($conn,$sql);

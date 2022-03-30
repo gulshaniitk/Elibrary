@@ -1,5 +1,15 @@
 <?php 
 include('connection.php');
+
+session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
+
 $bid=$_GET['bookid'];
 $sql="select * from books where Bookid=$bid";
 $table=mysqli_query($conn,$sql);

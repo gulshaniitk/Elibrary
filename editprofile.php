@@ -2,6 +2,13 @@
 <?php 
 include('connection.php');
 session_start();
+
+$adminid=$_SESSION['id'];
+
+if($adminid==null)
+{
+  header("location:index.php");
+}
 $id=$_SESSION['id'];
 $sql="select * from adminlogin where email='$id'";
 $table=mysqli_query($conn,$sql);

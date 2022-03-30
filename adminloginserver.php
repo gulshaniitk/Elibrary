@@ -27,7 +27,7 @@ else
         $res=mysqli_fetch_array($result);
         $_SESSION['id']=$res['email'];
 
-        header("location:homepage.php?id=$res[id]");
+        header("location:homepage.php?id=$res[email]");
     }
     else
     {
