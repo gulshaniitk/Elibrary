@@ -28,13 +28,16 @@ body{
 }
 
 .table{
-    border: 2px;
-    border-color: red;
+  border: 2px;
+    border-color: grey;
     padding: 12px;
     color: white;
-    background-color: #696969;
+    background-color: #595757;
     
 }
+/* .btn-success{
+  background-color: #3D378C!important;
+} */
 
 
 

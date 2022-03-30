@@ -2,6 +2,12 @@
 include('connection.php');
 // session_start();
 
+$el="";
+
+if(!empty($_GET['email']))
+{
+  $el=$_GET['email'];
+}
 
 
 ?>
@@ -59,51 +65,6 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-light">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <h4 style="color:white;">E-Library</h4>
-      <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="home_user.php">Home</a>
-      </li>
-     <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_books.php">Books</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="user_courses.php">Courses</a>
-      </li>
-
- 
-
-      
-      
-
-      
-    </ul>
-
-    <ul class="nav justify-content-end">
-    <li class="nav-item">
-        <a class="nav-link active" style="color:white;" aria-current="page" href="user_edit.php">Edit Profile</a>
-      </li>
-
-    <li class="nav-item">
-        <a class="nav-link"  style="color:white;" href="contact_us.php">Contact Us</a>
-      </li>
-
-   <!--   <li class="nav-item">
-        <a class="nav-link" style="color:white;" href="#">Log Out</a>
-      </li> 
--->
-  
-      <a class="btn btn-danger"href="user_log_out.php" role = "button"> Log Out </a>
-
-
-
-</ul>
-
-
-  </div>
-</nav>
 
 
 <div class="container">
@@ -147,7 +108,7 @@ body{
 
 
                 <Label>Email:</Label>
-                      <input type="text" name="email" class="form-control"  >
+                      <input type="text" name="email" class="form-control" value=" <?php echo $el ;?>"  >
                       <br>
                       <Label>Password:</Label>
                       <input type="password" name="password" class="form-control"   required>
@@ -214,7 +175,7 @@ if(isset($_POST['submit']))
 
     else {
       if($pswd!=$cpswd){
-        echo "<script>alert('Passwords do not match!!');</script>";
+        echo "<script>alert('Passwords do not match!!');window.location.href='user_register.php?email=$email' </script>";
 
 
       }
