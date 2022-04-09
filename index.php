@@ -47,17 +47,20 @@ body{
     background-attachment:fixed ;
     background-size: 100% 100%;
     
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
 
 }
 
 .login-container{
-    margin-top: 3%;
+    margin-top: 1%;
     margin-bottom: 3%;
+    background: rgb(40,40,42);
+background: linear-gradient(180deg, rgba(40,40,42,1) 16%, rgba(1,7,21,0.9587185215883228) 60%);
+opacity: 0.7;
 }
 .login-form-1{
     padding: 3%;
-    background:#282726;
+   
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     
 }
@@ -68,7 +71,7 @@ body{
 }
 .login-form-2{
     padding: 3%;
-    background: #f05837;
+  
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     
 }
@@ -96,10 +99,11 @@ body{
     color:#fff;
 }
 h1 {
-  font-size: 72px;
+  font-size: 80px;
   /* background-image: linear-gradient(60deg, #E21143, #FFB03A); */
- 
- padding: 0%;
+  padding: 1px; 
+
+
  
 }
 
@@ -122,9 +126,11 @@ h1 {
 <!-- <div class="container-fluid">
   <img src="http://uok.ac.rw/lib/images/templatemo_image_01.jpg" class="img-fluid" alt="Responsive image">
 </div> -->
+<marquee direction="right" style="color: #d6e38c;font-family:'Simplifica';text-decoration:blink;font-size:50px;filter:brightness(90%) " class="text-center font-weight"  >Welcome to Elibrary</marquee>
+<h1 ></h1>
 
 <div class="container login-container">
-  <h1 style="color: white;" class="text-center font-weight-bold">Welcome to Elibrary</h1>
+ 
             <div class="row">
                 <div class="col-md-6 login-form-1">
                 <form action="userloginserver.php" method="POST">
@@ -135,7 +141,7 @@ h1 {
                             <label style="color: white;"><?php echo $adroll_nomsg; ?></label>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Your Password *"  />
+                            <input type="password" name="password" class="form-control" placeholder="Your Password "  />
                             <label style="color: white;"><?php echo $apasswordmsg; ?></label>
                         </div>
                         <div class="form-group">
@@ -144,7 +150,7 @@ h1 {
                         <div class="form-group">
                             <a href="user_forget_password.php" class="btnForgetPwd">Forget Password?</a>
                             <br><br>
-                            <p>Not a member? <a href="user_register.php" class="text-white-50 fw-bold" >Register</a></p>
+                            <p>Not a member? <a href="user_register.php" style="color:white;" >Register</a></p>
                             <!-- <a href="#" class="btnForgetPwd">New User?</a> -->
                         </div>
                     </form>
@@ -153,11 +159,11 @@ h1 {
                 <form action="adminloginserver.php" method="POST">
                     <h3>Admin Login</h3>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" name="email" />
+                            <input type="text" class="form-control" placeholder="Your Email " name="email" />
                             <label style="color: white;"><?php echo $ademailmsg; ?></label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" name="password" />
+                            <input type="password" class="form-control" placeholder="Your Password " name="password" />
                             <label style="color: white;"><?php echo $adpasswordmsg; ?></label>
                         </div>
                         <div class="form-group">
