@@ -42,6 +42,14 @@ if($adminid==null)
   #ui label,h2{
     color: #fff;
   }
+  #log{
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
 
    </style>
     
@@ -50,7 +58,7 @@ if($adminid==null)
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h3 class="navbar-brand" >Elibrary</h3>
+    <h3 class="navbar-brand" id="log" >Elibrary</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

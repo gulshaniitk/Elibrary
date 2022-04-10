@@ -8,37 +8,49 @@ $error_message="";
 $msg="";
 $emailmsg="";
 
+session_start();
 
 if(isset($_POST['send']))
-
-
  {  
-    $sql="select * from `registered_students` where rollno='$_POST[email]'";
+    $sql="select * from students where email='$_POST[email]'";
     $result=mysqli_query($conn,$sql);
     $count=mysqli_num_rows($result);
-
-    $sql2="SELECT  `email` FROM `students` WHERE  rollno='$_POST[email]'";
-        $result2=mysqli_query($conn,$sql2);
-        
-        $temp2=mysqli_fetch_array($result2);
-         
-        
-        $email=$temp2['email'];
     
     if($count==1)
 
      {
-         $otp=123;
-        
-        // $otp=rand(100000,999999);
-        // $mail_status=sendOTP($email,$otp);
-        // $del=mysqli_query($conn,"DELETE FROM `otp_expiry` WHERE email='$email'");
-        // $res=mysqli_query($conn,"INSERT INTO `otp_expiry`( `otp`, `email`) VALUES ('$otp','$email)" );
+
+      $temp=mysqli_fetch_array($result);
+      $_SESSION['r']=$temp['rollno'];
+
+      $sql2="select * from registered_students where rollno='$_SESSION[r]'";
+      $result2=mysqli_query($conn,$sql2);
+      $count2=mysqli_num_rows($result2);
+
+      if($count2==1){
+        $email=$_POST['email'];
+        $otp=rand(100000,999999);
+          $mail_status=sendOTP($_POST['email'],$otp);
+        $del=mysqli_query($conn,"DELETE FROM `otp_expiry` WHERE email='$_POST[email]'");
+        $res=mysqli_query($conn,"INSERT INTO `otp_expiry`( `otp`, `email`) VALUES ('$otp','$_POST[email]')" );
         $success=1;
+
+      }
+      else {
+        $emailmsg="*User not registered*";
+       $success=0;
+
+      }
+
+
+       
+      
+      
+    
     }
     else
     {
-       $emailmsg="*Roll No. does not exist in database";
+       $emailmsg="*Email does not exist in database*";
        $success=0;
     }
 
@@ -52,6 +64,7 @@ if(isset($_POST['submit_otp']))
     $sql="select * from otp_expiry where otp='$_POST[otp]' and email='$_POST[email]' and now()<=date_add(create_at,interval 15 minute)";
     $result=mysqli_query($conn,$sql);
     $num=mysqli_num_rows($result);
+   
     $email=$_POST['email'];
     if($num==1)
     {
@@ -75,9 +88,9 @@ if(isset($_POST['changepass']))
     }
    else
     {   
-        $psd=mysqli_query($conn,"update adminlogin set password='$_POST[password]' where email='$_POST[email]'");
+        $psd=mysqli_query($conn,"update registered_students set password='$_POST[password]' where rollno='$_SESSION[r]'");
 
-        echo "<script>alert('Password changed successfully');window.location.href='index.php';</script>";
+         echo "<script>alert('Password changed successfully');window.location.href='index.php';</script>";
        
     }
 }
@@ -134,7 +147,7 @@ if(isset($_POST['changepass']))
                     <span class="h1 fw-bold mb-0">Elibrary</span>
                   
                     <?php  if($success==1)
-                        { 
+                        {  
                     ?>
                        </div>
 
@@ -143,6 +156,8 @@ if(isset($_POST['changepass']))
 <div class="form-outline mb-4">
   <input type="number" id="adminname" class="form-control form-control-lg" placeholder="Enter the otp sent to your email" name="otp" />
   <input type="text" id="adminname" class="form-control form-control-lg" value="<?php echo $email; ?>" name="email" hidden />
+  <input type="number" class="form-control form-control-lg" value="<?php echo $_SESSION['r']; ?>" name="rollno" hidden />
+
   <label style="color: red;" ><?php echo $error_message; ?></label>
 </div>
 <div class="pt-1 mb-4">
@@ -156,11 +171,12 @@ if(isset($_POST['changepass']))
                       ?>
                        </div>
 
-<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre New Password</h5>
+<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter New Password</h5>
 
 <div class="form-outline mb-4">
   <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Enter password" name="password" required />
   <input type="text" id="adminname" class="form-control form-control-lg" name="email" value="<?php echo $email; ?>" hidden />
+  <input type="number" class="form-control form-control-lg" value="<?php echo $_SESSION['r']; ?>" name="rollno" hidden />
   <br>
   <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Confirm password" name="cpassword" required />
   <label style="color: red;"><?php echo $msg ?></label>
@@ -172,10 +188,10 @@ if(isset($_POST['changepass']))
                     <?php } if($success==0) { ?>
                   </div>
 
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter your Roll No.</h5>
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter your Email</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="number" id="adminname" class="form-control form-control-lg"  name="email" required/>
+                    <input type="text" id="adminname" class="form-control form-control-lg"  name="email" required/>
                    <label style="color: red;" ><?php echo $emailmsg; ?></label>
                   </div>
                   <div class="pt-1 mb-4">

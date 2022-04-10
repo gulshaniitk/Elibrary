@@ -35,17 +35,38 @@ body{
 }
 
 .table{
-  border: 2px;
+    border: 2px;
     border-color: grey;
     padding: 12px;
     color: white;
-    background-color: #595757;
+    background-color: #333;
     
 }
+
+tr:hover{
+  background-color: #777778;
+}
+
 /* .btn-success{
   background-color: #3D378C!important;
 } */
+#log{
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
+  /* margin-right: 1 px; */
+  font-size: 30px;
 
+}
+.navbar-nav{
+  font-family: Cambria;
+  font-weight: 550;
+  font-size: 19px;
+}
+
+.custom {
+    width: 70px !important;
+}
 
 
 </style>
@@ -75,7 +96,7 @@ body{
 
 
 
-    <h3 class="navbar-brand" >Elibrary</h3>
+    <h3 class="navbar-brand " id="log" >E-library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -88,7 +109,7 @@ body{
           <a class="nav-link active" href="user_books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="user_courses.php">Courses</a>
+          <a class="nav-link " href="user_courses.php">E-Courses</a>
         </li>
         
       </ul>
@@ -127,20 +148,21 @@ body{
 </div>
 
 <div class="container" style="margin-top:25px;" >
-<table class="table table-hover">
+<table class="table table-hover" style="text-align:center;">
   <thead class="table-dark">
     <tr>
+    <th scope="col">S.No.</th>
       <th scope="col">Book Id</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Publisher</th>
       <th scope="col">Category</th>
-      <th scope="col">Pages</th>
+      <!-- <th scope="col">Pages</th> -->
       <th scope="col">Year</th>
-      <th scope="col">Status</th>
+      <th  scope="col">Status</th>
       <th scope="col">Link</th>
       <th scope="col">Issue</th>
-      <th scope="col">Return</th>
+      <!-- <th scope="col">Return</th> -->
      
       
       
@@ -164,6 +186,7 @@ $query="select * from books";
 }
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
+$x=1;
 
 while($res=mysqli_fetch_array($table))
 {
@@ -178,18 +201,20 @@ while($res=mysqli_fetch_array($table))
 
     ?>
     <tr>
+    <td><?php echo $x; ?></td>
       <td><?php echo $res['Bookid']; ?></td>
-      <td><?php echo $res['Title']; ?></td>
-      <td><?php echo $res['Author']; ?></td>
+      <td style="width:200px;"><?php echo $res['Title']; ?></td>
+      <td style="width:200px;" ><?php echo $res['Author']; ?></td>
       <td><?php echo $res['Publisher']; ?></td>
       <td><?php echo $res['Category']; ?></td>
-      <td><?php echo $res['Pages']; ?></td>
+      <!-- <td><?php echo $res['Pages']; ?></td> -->
       <td><?php echo $res['Year']; ?></td>
 
       <td>
         
         
       <?php 
+      $x++;
 
       
 
@@ -198,11 +223,27 @@ while($res=mysqli_fetch_array($table))
 
        
       if($flag==1){
-        echo "Available";
+
+
+        ?>
+
+<p >Availabe</p>
+
+        
+
+
+        <?php
+        
+
+
       }
       else {
 
-        echo "Not Available";
+        ?>
+
+     <p > Not Availabe</p>
+
+      <?php
 
       }
       
@@ -228,7 +269,7 @@ if(mysqli_num_rows($query)==1){
 //availabe and not issued
       if($flag==1 and $flag2==1){?>         
        
-    <a href="user_issue.php?id=<?php echo $res['Bookid'];?>" class='btn btn-success'>Issue</a>
+    <a href="user_issue.php?id=<?php echo $res['Bookid'];?>" class='btn btn-info custom'>Issue</a>
        <!-- <form action="user_issue.php" method="POST" >
        
 
@@ -253,7 +294,7 @@ if(mysqli_num_rows($query)==1){
 
         ?>
 
-        <button href="#" type="button" class="btn btn-info" disabled>Issued</button>
+        <button href="#" type="button" class="btn btn-info custom" disabled>Issued</button>
 
 
 
@@ -268,9 +309,12 @@ if(mysqli_num_rows($query)==1){
 
 
 
-      else {?>
+      else {
+        
+        
+        ?>
 
-<!-- <button href="#" type="button" class="btn btn-danger" disabled>Issue</button> -->
+<button href="#" type="button" class="btn btn-info custom" disabled>Issue</button>
 
 <?php
       }?>
@@ -298,7 +342,7 @@ if(mysqli_num_rows($query)==1){
 if(($flag==1 and $flag2==0) or ($flag==0 and $flag2==0)){
   ?>
 
-  <a href="user_return.php?id1=<?php echo $res['Bookid'];?>" type="button" class="btn btn-primary" >Return</a>
+  <!-- <a href="user_return.php?id1=<?php echo $res['Bookid'];?>" type="button" class="btn btn-primary" >Return</a> -->
 
 
   <?php

@@ -89,8 +89,9 @@ tr:hover{
   background-color: #777778;
 }
 #log{
-  font-style: oblique;
-  color:#e3d206;
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
   /* margin-right: 1 px; */
   font-size: 30px;
 

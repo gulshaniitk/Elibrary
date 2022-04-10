@@ -63,6 +63,19 @@ tr:hover{
 #temp{
   pointer-events: none;
 }
+#log{
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+.navbar-nav{
+  font-family: Cambria;
+  font-weight: 550;
+  font-size: 19px;
+}
 
    </style>
 
@@ -86,7 +99,7 @@ tr:hover{
   
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h3 class="navbar-brand" >Elibrary</h3>
+    <h3 class="navbar-brand" id="log" >E-library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -99,7 +112,7 @@ tr:hover{
           <a class="nav-link " href="user_books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="user_courses.php">Courses</a>
+          <a class="nav-link " href="user_courses.php">E-Courses</a>
         </li>
         
       </ul>
@@ -165,9 +178,10 @@ tr:hover{
 
     <div class="container">
     <h2 style="text-align: center;">Books Issued</h2>
-    <table class="table table-hover" >
+    <table class="table table-hover" style="text-align:center;" >
   <thead>
     <tr id="temp">
+    <th scope="col">S.No.</th>
       <th scope="col">BookId</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
@@ -182,22 +196,30 @@ tr:hover{
 $query="select B.Bookid,B.Title,B.Author,B.Category,A.issuedate,A.returndate from issuebook as A,books as B where A.rollno='$rn' and A.bookid=B.Bookid ";
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
+$x=1;
 
 while($res=mysqli_fetch_array($table))
 {
 
     ?>
     <tr id="11">
+    <td><?php echo $x; ?></td>
+
       <td><?php echo $res['Bookid']; ?></td>
       <td><?php echo $res['Title']; ?></td>
       <td><?php echo $res['Author']; ?></td>
       <td><?php echo $res['issuedate']; ?></td>
       <td><?php echo $res['returndate']; ?></td>
-      <td><?php echo cal_fine($res['returndate']); ?></td>
+      <td><?php 
+      $x1="Rs.";
+      $x2=cal_fine($res['returndate']); 
+      $x1.=$x2;
+      
+      echo $x1; ?></td>
      
       
     </tr>
-    <?php   } ?>
+    <?php $x++;  } ?>
   </tbody>
 </table>
 
