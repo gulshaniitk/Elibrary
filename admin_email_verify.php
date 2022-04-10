@@ -220,7 +220,7 @@ h1 {
   <h3  >Forgot your password?</h3>
                     
                     <div class="form-group">
-                    <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Please enter the email you use to sign in to E-library " name="email" required/>
+                    <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Enter your email here " name="email" required/>
                    <label style="color: red;" ><?php echo $emailmsg; ?></label>
                     </div>
                     <div class="form-group">
