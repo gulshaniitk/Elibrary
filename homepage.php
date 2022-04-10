@@ -84,16 +84,23 @@ width:100%;
     
     color: white;
     background-color: #333;
+    
 }
 tr:hover{
   background-color: #777778;
 }
 #log{
-  font-style: oblique;
+  font-family: Algerian;
+  /* font-family: cursive; */
   color:#e3d206;
   /* margin-right: 1 px; */
   font-size: 30px;
 
+}
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
 }
 
 </style>
@@ -138,9 +145,10 @@ tr:hover{
         <li class="nav-item">
           <a class="nav-link" href="editprofile.php">Edit Profile</a>
         </li>
-        <li><a href="logout.php" class="btn btn-info ">
-          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-       
+        <!-- <li><a href="logout.php" class="btn btn-info ">
+          <span class="glyphicon glyphicon-log-out "></span> Logout</a></li> -->
+          <li><a href="logout.php" class="btn btn-info ">
+          <span class="glyphicon glyphicon-log-out "></span> Logout</a></li>
         
       </ul>
     </div>
@@ -181,9 +189,10 @@ if(isset($_POST['submit']))
   { 
     ?>
     <div class="container" >
-<table class="table table-hover" id="tbl">
+<table class="table table-hover" style="text-align: center;" id="tbl">
   <thead class="table-dark">
     <tr>
+      <th scope="col">S.No.</th>
       <th scope="col">Roll No</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -198,10 +207,12 @@ if(isset($_POST['submit']))
   </thead>
   <tbody>
 <?php 
+   $x=1;
     while($row=mysqli_fetch_array($res))
     {
       ?>
       <tr>
+      <td><?php echo $x; ?></td>
         <td><?php echo $row['rollno']; ?></td>
         <td><?php echo $row['firstname']; ?></td>
         <td><?php echo $row['lastname']; ?></td>
@@ -214,7 +225,7 @@ if(isset($_POST['submit']))
         
         
       </tr>
-      <?php   } 
+      <?php  $x++; } 
     
 
     ?>

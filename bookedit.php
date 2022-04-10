@@ -86,19 +86,16 @@ $res=mysqli_fetch_array($table);
                 <div class="row">
                   <div class="col-lg-4">
                     <label>Year:</label>
-                    <input type="number" name="year" class="form-control"  value="<?php echo $res['Year'] ?>">
+                    <input type="number" name="year" class="form-control" required>
                   </div>
                   <div class="col-lg-4">
                     <label>Language:</label>
-                    <input type="text" name="language" class="form-control"  value="<?php echo $res['Language'] ?>">
+                    <input type="text" name="language" class="form-control" >
 
                   </div>
                   <div class="col-lg-4">
-                  <label>Status:</label>
-                    <select class="form-control" name="status"  value="<?php echo $res['Status'] ?>">
-                      <option value="available" selected>Available</option>
-                      <option value="not available">Not available</option>
-                    </select>
+                  <label>Quantity:</label>
+                  <input type="number" name="quantity" class="form-control" required>
                   </div>
                 </div>
                 <br>
@@ -117,7 +114,7 @@ $res=mysqli_fetch_array($table);
     <?php 
 if(isset($_POST['update']))
 {  
-    $sql="update books set Bookid='$_POST[bookid]',Title='$_POST[title]',Author='$_POST[author]',Publisher='$_POST[publisher]',Category='$_POST[category]',Pages='$_POST[pages]',Year='$_POST[year]',Status='$_POST[status]',Link='$_POST[link]',Language='$_POST[language]' where Bookid=$bid";
+    $sql="update books set Bookid='$_POST[bookid]',Title='$_POST[title]',Author='$_POST[author]',Publisher='$_POST[publisher]',Category='$_POST[category]',Pages='$_POST[pages]',Year='$_POST[year]',Link='$_POST[link]',Language='$_POST[language]',Quantity='$_POST[quantity]' where Bookid=$bid";
     
 if (mysqli_query($conn,$sql) === TRUE) {
   echo "<script>alert('Book updated successfully');window.location.href='books.php';</script>";

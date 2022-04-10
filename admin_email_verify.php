@@ -124,7 +124,7 @@ if(isset($_POST['changepass']))
                     ?>
                        </div>
 
-<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre OTP</h5>
+<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter OTP</h5>
 
 <div class="form-outline mb-4">
   <input type="number" id="adminname" class="form-control form-control-lg" placeholder="Enter the otp sent to your email" name="otp" />
@@ -142,7 +142,7 @@ if(isset($_POST['changepass']))
                       ?>
                        </div>
 
-<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre New Password</h5>
+<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter New Password</h5>
 
 <div class="form-outline mb-4">
   <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Enter password" name="password" required />
@@ -158,7 +158,7 @@ if(isset($_POST['changepass']))
                     <?php } if($success==0) { ?>
                   </div>
 
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entre your Email</h5>
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Enter your Email</h5>
 
                   <div class="form-outline mb-4">
                     <input type="text" id="adminname" class="form-control form-control-lg"  name="email" required/>

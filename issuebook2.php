@@ -58,13 +58,38 @@ $res3=mysqli_fetch_array($table3);
     color: white;
   }
 
-  .table2{
+  /* .table2{
     border: 2px;
     border-color: red;
     padding: 12px;
     color: white;
     background-color: #696969;
     
+} */
+
+.table{
+
+border-color: grey;
+
+color: white;
+background-color: #333;
+}
+tr:hover{
+background-color: #777778;
+}
+
+#log{
+  font-family: Algerian;
+  color:#e3d206;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
 }
 
 
@@ -77,7 +102,7 @@ $res3=mysqli_fetch_array($table3);
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h3 class="navbar-brand" >Elibrary</h3>
+    <h3 class="navbar-brand" >E-Library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

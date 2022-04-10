@@ -43,6 +43,20 @@ if($adminid==null)
     color: #fff;
   }
 
+  #log{
+    font-family: Algerian;
+  color:#e3d206;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
+}
+
    </style>
     
   </head>
@@ -50,7 +64,7 @@ if($adminid==null)
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h3 class="navbar-brand" >Elibrary</h3>
+  <h3 class="navbar-brand" id="log" >E-Library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -107,11 +121,11 @@ if($adminid==null)
                 <div class="row">
                   <div class="col-lg-6">
                     <label>Book Id(ISBN)</label>
-                    <input type="text" class="form-control" name="bookid" placeholder="#123" required>
+                    <input type="text" class="form-control" name="bookid" placeholder="Enter the Bookid" required>
                   </div>
                   <div class="col-lg-6">
                     <label>Pages:</label>
-                    <input type="number" name="pages" class="form-control" placeholder="#contactno" > 
+                    <input type="number" name="pages" class="form-control" placeholder="Enter the contactno" > 
                   </div>
                 </div>
                 <br>

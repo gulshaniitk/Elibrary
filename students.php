@@ -36,14 +36,29 @@ body{
 }
 
 .table{
-    border: 2px;
-    border-color: red;
-    padding: 12px;
-    color: white;
-    background-color: #696969;
-    
+
+border-color: grey;
+
+color: white;
+background-color: #333;
+}
+tr:hover{
+background-color: #777778;
 }
 
+#log{
+  font-family: Algerian;
+  color:#e3d206;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
+}
 
 
 </style>
@@ -62,7 +77,7 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h3 class="navbar-brand" >Elibrary</h3>
+  <h3 class="navbar-brand" id="log" >E-Library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -124,9 +139,10 @@ body{
 </div>
 <br>
 <div class="container" >
-<table class="table table-hover">
+<table class="table table-hover" style="text-align: center;">
   <thead class="table-dark">
     <tr>
+      <th scope="col">S.No.</th>
       <th scope="col">Roll No</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -141,6 +157,7 @@ body{
   </thead>
   <tbody>
   <?php
+  $x=1;
   if(isset($_POST['submit']))
   {
     $str=$_POST['search'];
@@ -161,6 +178,7 @@ while($res=mysqli_fetch_array($table))
 
     ?>
     <tr>
+    <td><?php echo $x; ?></td>
       <td><?php echo $res['rollno']; ?></td>
       <td><?php echo $res['firstname']; ?></td>
       <td><?php echo $res['lastname']; ?></td>
@@ -175,7 +193,7 @@ while($res=mysqli_fetch_array($table))
       
       </td>
     </tr>
-    <?php   } ?>
+    <?php  $x++; } ?>
   </tbody>
 </table>
 </div>

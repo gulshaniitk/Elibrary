@@ -18,6 +18,33 @@ background-size: 100% 100%;
 background-repeat: no-repeat;
 background-attachment:fixed ;
  }
+
+ #log{
+  font-family: Algerian;
+  color:#e3d206;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+
+.table{
+
+border-color: grey;
+
+color: white;
+background-color: #333;
+}
+tr:hover{
+background-color: #777778;
+}
+
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
+}
+
+
     </style>
   </head>
 
@@ -38,7 +65,7 @@ background-attachment:fixed ;
     <nav class="navbar navbar-expand-sm bg-dark navbar-light">
   <div class="container-fluid">
     <ul class="navbar-nav">
-      <h4 style="color:white;">E-Library</h4>
+    <h3 class="navbar-brand" id="log" >E-Library</h3>
       <li class="nav-item">
         <a class="nav-link " style="color:white;" href="home_user.php">Home</a>
       </li>

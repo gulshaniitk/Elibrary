@@ -27,6 +27,31 @@ body{
     padding-left: 20px;
 }
 
+.table{
+
+border-color: grey;
+
+color: white;
+background-color: #333;
+}
+tr:hover{
+background-color: #777778;
+}
+
+#log{
+  font-family: Algerian;
+  color:#e3d206;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
+}
+
 </style>
 
 <body>
@@ -41,7 +66,7 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h3 class="navbar-brand" >Elibrary</h3>
+  <h3 class="navbar-brand" id="log" >E-Library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

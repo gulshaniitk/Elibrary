@@ -34,13 +34,37 @@ body{
 
 }
 
-.table{
+/* .table{
     border: 2px;
     border-color: red;
     padding: 12px;
     color: white;
     background-color: #696969;
     
+} */
+
+.table{
+
+border-color: grey;
+
+color: white;
+background-color: #333;
+}
+tr:hover{
+background-color: #777778;
+}
+
+#log{
+  font-family: Algerian;
+  color:#e3d206;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
 }
 
 
@@ -58,7 +82,7 @@ body{
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <h4 class="navbar-brand" >Elibrary</h4>
+  <h3 class="navbar-brand" id="log" >E-Library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -118,9 +142,10 @@ body{
 
 <br>
 <div class="container" >
-<table class="table table-hover">
-  <thead class="table-dark">
+<table class="table table-hover" style="text-align: center;" id="tbl">
+  <thead class="table-dark" >
     <tr>
+      <th scope="col">S.No.</th>
       <th scope="col">Book Id</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
@@ -151,12 +176,13 @@ $query="select * from books";
 
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
-
+$x=1;
 while($res=mysqli_fetch_array($table))
 {
 
     ?>
     <tr>
+    <td><?php echo $x; ?></td>
       <td><?php echo $res['Bookid']; ?></td>
       <td><?php echo $res['Title']; ?></td>
       <td><?php echo $res['Author']; ?></td>
@@ -172,7 +198,7 @@ while($res=mysqli_fetch_array($table))
         <a href="bookdelete.php?bookid=<?php echo $res['Bookid']; ?>" class="btn btn-danger" >Delete</a>
       </td>
     </tr>
-    <?php   } ?>
+    <?php  $x++; } ?>
   </tbody>
 </table>
 </div>

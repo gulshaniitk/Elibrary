@@ -46,7 +46,7 @@ body{
     background-repeat: no-repeat;
     background-attachment:fixed ;
     background-size: 100% 100%;
-    
+    font-family: Cursive;
   /* backdrop-filter: blur(2px); */
 
 }
@@ -62,7 +62,12 @@ opacity: 0.7;
     padding: 3%;
    
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    
+    margin-top: 1%;
+    margin-bottom: 3%;
+    background: rgb(40,40,42);
+background: linear-gradient(180deg, rgba(40,40,42,1) 16%, rgba(1,7,21,0.9587185215883228) 60%);
+opacity: 0.7;
+font-family: Cursive;
 }
 .login-form-1 h3{
     text-align: center;
@@ -73,7 +78,12 @@ opacity: 0.7;
     padding: 3%;
   
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    
+    margin-top: 1%;
+    margin-bottom: 3%;
+    background: rgb(40,40,42);
+background: linear-gradient(180deg, rgba(40,40,42,1) 16%, rgba(1,7,21,0.9587185215883228) 60%);
+opacity: 0.7;
+font-family: Cursive;
 }
 .login-form-2 h3{
     text-align: center;
@@ -107,6 +117,31 @@ h1 {
  
 }
 
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.navbar-nav{
+  font-weight: 550;
+  font-size: 19px;
+  font-family: Cambria;
+}
+
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
     </style>
   </head>
   <body>
@@ -126,13 +161,13 @@ h1 {
 <!-- <div class="container-fluid">
   <img src="http://uok.ac.rw/lib/images/templatemo_image_01.jpg" class="img-fluid" alt="Responsive image">
 </div> -->
-<marquee direction="right" style="color: #d6e38c;font-family:'Simplifica';text-decoration:blink;font-size:50px;filter:brightness(90%) " class="text-center font-weight"  >Welcome to Elibrary</marquee>
-<h1 ></h1>
-
-<div class="container login-container">
- 
-            <div class="row">
-                <div class="col-md-6 login-form-1">
+<marquee direction="right" style="color: #d6e38c;font-family:'Simplifica';text-decoration:blink;font-size:65px; " class="text-center font-weight glow"  >Welcome to Elibrary</marquee>
+<!-- <h2 class="glow " style="font-family: cursive;" >Welcome to Elibrary</h2> -->
+<div class="container ">
+           <div class="row">
+               <div class="col-md-6">
+               <div class="row ">
+                <div class="col-md-11 login-form-1 login-container">
                 <form action="userloginserver.php" method="POST">
                     <h3  >User Login</h3>
                     
@@ -148,14 +183,21 @@ h1 {
                             <input type="submit" class="btnSubmit"  />
                         </div>
                         <div class="form-group">
-                            <a href="user_forget_password.php" class="btnForgetPwd">Forget Password?</a>
+                            <a href="user_forget_password.php"  style="text-decoration: underline;" class="btnForgetPwd">Forget Password?</a>
                             <br><br>
                             <p>Not a member? <a href="user_register.php" style="color:white;" >Register</a></p>
                             <!-- <a href="#" class="btnForgetPwd">New User?</a> -->
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 login-form-2">
+                <div class="col-md-1"></div>
+    </div>
+
+               </div>
+               <div class="col-md-6">
+                <div class="row ">
+                <div class="col-md-1"></div>
+                <div class="col-md-11 login-form-2 login-container" >
                 <form action="adminloginserver.php" method="POST">
                     <h3>Admin Login</h3>
                         <div class="form-group">
@@ -171,12 +213,19 @@ h1 {
                         </div>
                         <div class="form-group">
 
-                            <a href="admin_email_verify.php" class="btnForgetPwd" value="Login">Forget Password?</a>
+                            <a href="admin_email_verify.php" style="text-decoration: underline;" class="btnForgetPwd" value="Login">Forget Password?</a>
                         </div>
+                        
+                        <br>
+                        <br>
+                        
                     </form>
+                </div>
+                
+                </div>
                 </div>
             </div>
         </div>
-  
+       
   </body>
 </html>
