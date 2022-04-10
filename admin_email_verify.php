@@ -16,9 +16,9 @@ if(isset($_POST['send']))
     
     if($count==1)
      {  $email=$_POST['email'];
-        // $otp=rand(100000,999999);
-        // $mail_status=sendOTP($_POST['email'],$otp);
-        $otp=123456;
+        $otp=rand(100000,999999);
+        $mail_status=sendOTP($_POST['email'],$otp);
+        // $otp=123456;
         $del=mysqli_query($conn,"DELETE FROM `otp_expiry` WHERE email='$_POST[email]'");
         $res=mysqli_query($conn,"INSERT INTO `otp_expiry`( `otp`, `email`) VALUES ('$otp','$_POST[email]')" );
         $success=1;
