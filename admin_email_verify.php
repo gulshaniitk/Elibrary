@@ -103,11 +103,11 @@ opacity: 0.7;
 }
 .login-form-1{
    
-    padding: 3%;
+    padding: 1%;
    
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 12%;
-    margin-bottom: 10%;
+    margin-top: 8%;
+    margin-bottom: 8%;
     background: rgb(40,40,42);
 background: linear-gradient(180deg, rgba(40,40,42,1) 16%, rgba(1,7,21,0.9587185215883228) 60%);
 opacity: 0.7;
@@ -115,7 +115,7 @@ font-family: Cursive;
 }
 .login-form-1 h3{
     text-align: center;
-    margin-bottom:12%;
+    margin-bottom:6%;
     color:#fff;
 }
 
@@ -129,6 +129,33 @@ font-family: Cursive;
     padding:2%;
     text-align: center;  
 }
+
+h1 {
+  font-size: 80px;
+  /* background-image: linear-gradient(60deg, #E21143, #FFB03A); */
+  padding: 1px; 
+
+
+ 
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
     </style>
   </head>
   <body>
@@ -148,7 +175,7 @@ font-family: Cursive;
 <!-- <div class="container-fluid">
   <img src="http://uok.ac.rw/lib/images/templatemo_image_01.jpg" class="img-fluid" alt="Responsive image">
 </div> -->
-<!-- <marquee direction="right" style="color: #d6e38c;font-family:'Simplifica';text-decoration:blink;font-size:65px; " class="text-center font-weight glow"  >Welcome to Elibrary</marquee> -->
+<marquee direction="right" style="color: #d6e38c;font-family:'Simplifica';text-decoration:blink;font-size:65px; " class="text-center font-weight glow"  >Welcome to Elibrary</marquee>
 <!-- <h2 class="glow " style="font-family: cursive;" >Welcome to Elibrary</h2> -->
 <div class="container ">
            <div class="row">
@@ -190,10 +217,10 @@ font-family: Cursive;
              
                     <?php } if($success==0) { ?>
 
-  <h3  >Enter your Email</h3>
+  <h3  >Forgot your password?</h3>
                     
                     <div class="form-group">
-                    <input type="text" id="adminname" class="form-control form-control-lg"  name="email" required/>
+                    <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Please enter the email you use to sign in to E-library " name="email" required/>
                    <label style="color: red;" ><?php echo $emailmsg; ?></label>
                     </div>
                     <div class="form-group">
