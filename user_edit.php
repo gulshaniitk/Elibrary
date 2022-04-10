@@ -56,6 +56,19 @@ body{
   #ui label,h2{
     color: #fff;
   }
+  #log{
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+.navbar-nav{
+  font-family: Cambria;
+  font-weight: 550;
+  font-size: 19px;
+}
 
 </style>
 
@@ -81,7 +94,7 @@ body{
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
 
-    <h3 class="navbar-brand" >Elibrary</h3>
+    <h3 class="navbar-brand" id="log" >E-library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -94,7 +107,7 @@ body{
           <a class="nav-link" href="user_books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="user_courses.php">Courses</a>
+          <a class="nav-link " href="user_courses.php">E-Courses</a>
         </li>
         
       </ul>

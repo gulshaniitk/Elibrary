@@ -42,6 +42,14 @@ if($adminid==null)
   #ui label,h2{
     color: #fff;
   }
+  #log{
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
 
   #log{
     font-family: Algerian;

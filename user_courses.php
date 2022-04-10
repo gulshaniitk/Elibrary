@@ -39,12 +39,30 @@ body{
 }
 
 .table{
-  border: 2px;
+    border: 2px;
     border-color: grey;
     padding: 12px;
     color: white;
-    background-color: #595757;
+    background-color: #333;
     
+}
+
+tr:hover{
+  background-color: #777778;
+}
+
+#log{
+  font-family: Algerian;
+  /* font-style: oblique; */
+  color:yellow;
+  /* margin-right: 1 px; */
+  font-size: 30px;
+
+}
+.navbar-nav{
+  font-family: Cambria;
+  font-weight: 550;
+  font-size: 19px;
 }
 
 
@@ -58,7 +76,7 @@ body{
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/cornae@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
@@ -67,29 +85,29 @@ body{
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
 
-    <h3 class="navbar-brand" >Elibrary</h3>
+    <h3 class="navbar-brand" id="log" >E-library</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="home_user.php">Home</a>
+          <a class="nav-link "  aria-current="page" href="home_user.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="user_books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="user_courses.php">Courses</a>
+          <a class="nav-link active "  href="user_courses.php">E-Courses</a>
         </li>
         
       </ul>
       <ul class="navbar-nav navbar-right ">
         <li class="nav-item">
-          <a class="nav-link" href="user_edit.php">Edit Profile</a>
+          <a class="nav-link"  href="user_edit.php">Edit Profile</a>
         </li>
         <li><a href="user_log_out.php" class="btn btn-danger ">
-          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <span class="glyphicon glyphicon-log-out " id="out" ></span> Logout</a></li>
        
         
       </ul>
@@ -119,10 +137,11 @@ body{
 </div>
 
 <div class="container" style="margin-top:25px;" >
-<table class="table table-hover">
-  <thead class="table-dark">
+<table class="table table-hover" style="text-align:center;">
+  <thead class="table-dark" >
     <tr>
-      <th scope="col">Course Number</th>
+      <!-- <th scope="col">Course Number</th> -->
+      <th scope="col">S.No.</th>
       <th scope="col">Name</th>
       <th scope="col">Instructors</th>
       <th scope="col">Year</th>
@@ -149,13 +168,16 @@ $query="select * from courses";
 }
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
+$x=1;
 
 while($res=mysqli_fetch_array($table))
 {
 
     ?>
     <tr>
-      <td><?php echo $res['courseid']; ?></td>
+      
+        
+    <td><?php echo $x; ?></td>
       <td><?php echo $res['name']; ?></td>
       <td><?php echo $res['instructors']; ?></td>
       <td><?php echo $res['year']; ?></td>
@@ -165,7 +187,7 @@ while($res=mysqli_fetch_array($table))
      
     
     </tr>
-    <?php   } ?>
+    <?php $x++;  } ?>
   </tbody>
 </table>
 </div>
