@@ -145,8 +145,8 @@ if($adminid==null)
                   <div class="col-lg-4">
                   <label>Gender:</label>
                     <select class="form-control" name="gender">
-                      <option value="male" selected>Male</option>
-                      <option value="female">Female</option>
+                      <option value="Male" selected>Male</option>
+                      <option value="Female">Female</option>
                     </select>
                   </div>
                 </div>

@@ -100,6 +100,8 @@ if(isset($_POST['changepass']))
 
 <!doctype html>
 <html lang="en">
+
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -109,6 +111,83 @@ if(isset($_POST['changepass']))
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+
+body{
+    background-image: url('https://media.istockphoto.com/photos/books-picture-id949118068?k=20&m=949118068&s=612x612&w=0&h=e8tiaCdluEA9IS_I7ytStcx--toLbovf3U74v-LfNAk=');
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+    background-size: 100% 100%;
+    font-family: Cursive;
+  /* backdrop-filter: blur(2px); */
+
+}
+
+.login-container{
+   
+  
+    background: rgb(40,40,42);
+background: linear-gradient(180deg, rgba(40,40,42,1) 16%, rgba(1,7,21,0.9587185215883228) 60%);
+opacity: 0.7;
+}
+.login-form-1{
+   
+    padding: 1%;
+   
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 8%;
+    margin-bottom: 8%;
+    background: rgb(40,40,42);
+background: linear-gradient(180deg, rgba(40,40,42,1) 16%, rgba(1,7,21,0.9587185215883228) 60%);
+opacity: 0.7;
+font-family: Cursive;
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:6%;
+    color:#fff;
+}
+
+.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+    text-align: center;  
+}
+
+h1 {
+  font-size: 80px;
+  /* background-image: linear-gradient(60deg, #E21143, #FFB03A); */
+  padding: 1px; 
+
+
+ 
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+
+      </style>
+    
   </head>
   <body>
     

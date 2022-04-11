@@ -80,6 +80,8 @@ background-color: #777778;
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
   <h3 class="navbar-brand" id="log" >E-Library</h3>
@@ -142,7 +144,7 @@ background-color: #777778;
 
 <br>
 <div class="container" >
-<table class="table table-hover" style="text-align: center;" id="tbl">
+<table class="table table-hover sortable" style="text-align: center;" id="tbl">
   <thead class="table-dark" >
     <tr>
       <th scope="col">S.No.</th>
