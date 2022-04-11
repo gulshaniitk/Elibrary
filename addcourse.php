@@ -132,13 +132,13 @@ background-color: #777778;
                   </div>
                   <div class="col-lg-6">
                     <label>Language:</label>
-                    <input type="text" name="language" class="form-control" >
+                    <input type="text" name="language" class="form-control" required>
 
                   </div>
                 </div>
                 <br>
                 <label>Skills:</label>
-                <textarea type="text" name="skills" class="form-control" placeholder="Enter the category of the here" rows="4" cols="50"></textarea>
+                <textarea type="text" name="skills" class="form-control" placeholder="Enter the skills here" rows="4" cols="50"></textarea>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
                 </form>
