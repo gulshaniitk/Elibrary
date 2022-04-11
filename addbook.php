@@ -91,7 +91,7 @@ if($adminid==null)
           <a class="nav-link" href="books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="courses.php">Courses</a>
+          <a class="nav-link " href="courses.php">E-Courses</a>
         </li>
         
       </ul>
@@ -133,7 +133,7 @@ if($adminid==null)
                   </div>
                   <div class="col-lg-6">
                     <label>Pages:</label>
-                    <input type="number" name="pages" class="form-control" placeholder="Enter the contactno" > 
+                    <input type="number" name="pages" class="form-control" placeholder="Enter total number of pages" required> 
                   </div>
                 </div>
                 <br>
@@ -144,7 +144,7 @@ if($adminid==null)
                   </div>
                   <div class="col-lg-4">
                     <label>Language:</label>
-                    <input type="text" name="language" class="form-control" >
+                    <input type="text" name="language" class="form-control" required>
 
                   </div>
                   <div class="col-lg-4">

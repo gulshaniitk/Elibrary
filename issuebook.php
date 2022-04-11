@@ -73,10 +73,17 @@ background-color: #777778;
 
 }
 
+#temp{
+  pointer-events: none;
+}
 .navbar-nav{
   font-weight: 550;
   font-size: 19px;
   font-family: Cambria;
+}
+
+.custom {
+    width: 70px !important;
 }
 
 
@@ -86,7 +93,7 @@ background-color: #777778;
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    
-
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <h3 class="navbar-brand" id="log">E-Library</h3>
@@ -174,9 +181,10 @@ background-color: #777778;
    
 <div class="container">
     <h1>Books Issued</h1>
-    <table class="table table-hover" style="background:white;">
-  <thead>
-    <tr>
+    <table  class="table table-hover table2 sortable" style="text-align: center;">
+  <thead class="table-dark">
+    <tr >
+    <th scope="col">S.No.</th>
       <th scope="col">BookId</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
@@ -191,12 +199,15 @@ background-color: #777778;
 $query="select B.Bookid,B.Title,B.Author,B.Category,A.issuedate,A.returndate from issuebook A,books B where A.rollno='$rn' and A.bookid=B.Bookid ";
 $table=mysqli_query($conn,$query);
 $num=mysqli_num_rows($table);
+$x=1;
+$y=1;
 
 while($res=mysqli_fetch_array($table))
 {
 
     ?>
     <tr>
+    <td><?php echo $x;$x++; ?></td>
       <th scope="row"><?php echo $res['Bookid']; ?></th>
       <td><?php echo $res['Title']; ?></td>
       <td><?php echo $res['Author']; ?></td>
@@ -238,15 +249,17 @@ while($res=mysqli_fetch_array($table))
 </div>
 
 <div class="container" style="margin-top:25px;" >
-<table  class="table table-hover table2">
+<table  class="table table-hover table2 sortable" style="text-align: center;">
   <thead class="table-dark">
     <tr>
+    <th scope="col">S.No.</th>
+
       <th scope="col">Book Id</th>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Publisher</th>
       <th scope="col">Category</th>
-      <th scope="col">Pages</th>
+      <!-- <th scope="col">Pages</th> -->
       <th scope="col">Year</th>
       <th scope="col">Quantity</th>
       <th scope="col">Issue</th>
@@ -285,19 +298,20 @@ while($res=mysqli_fetch_array($table))
   $flag=1; // book availabe
   if($res['Quantity']==0){
     $flag=0;
-
+  continue;
   }
 
 
 
     ?>
     <tr>
+    <td><?php echo $y;$y++; ?></td>
       <td><?php echo $res['Bookid']; ?></td>
       <td><?php echo $res['Title']; ?></td>
       <td><?php echo $res['Author']; ?></td>
       <td><?php echo $res['Publisher']; ?></td>
       <td><?php echo $res['Category']; ?></td>
-      <td><?php echo $res['Pages']; ?></td>
+      
       <td><?php echo $res['Year']; ?></td>
 
       <td>
@@ -319,91 +333,119 @@ if(mysqli_num_rows($query)==1){
   $flag2=0; // book issued
 }
 
-      
 
 //availabe and not issued
-      if($flag==1 and $flag2==1 and $res['Quantity']>0){?>         
+if($flag==1 and $flag2==1){?>         
        
-       <a type="button" class="btn btn-success" href="issuebook2.php?id=<?php echo $res['Bookid'];?>&rn=<?php echo $rn;?>" >Issue</a>
-       <!-- <form action="user_issue.php" method="POST" >
-       
+       <a type="button" class="btn btn-primary custom" href="issuebook2.php?id=<?php echo $res['Bookid'];?>&rn=<?php echo $rn;?>" >Issue</a>
+     <!-- <form action="user_issue.php" method="POST" >
+     
 
-       <?php
-       
-       ?>
+     <?php
+     
+     ?>
 
-       
+     
 
 
-       </form> -->
+     </form> -->
 
-        <!-- <a href="user_issue.php" class="btn btn-info" >Issue</a> -->
-        
-        
-        <?php
-      }
+      <!-- <a href="user_issue.php" class="btn btn-info" >Issue</a> -->
       
+      
+      <?php
+    }
+    
 
 // (availabe and issued) or (not availabe and issued)
-      else if(($flag==1 and $flag2==0) or ($flag==0 and $flag2==0)){
+    else if(($flag==1 and $flag2==0) or ($flag==0 and $flag2==0)){
 
-        ?>
+      ?>
 
-        <button href="#" type="button" class="btn btn-info" disabled>Issued</button>
-
-
+<button href="#" type="button" class="btn btn-primary custom" disabled>Issued</button>
 
 
-        <?php
-      }
 
-  else {?>
-
-<!-- <button href="#" type="button" class="btn btn-danger" disabled>Issue</button> -->
-
-<?php
-      }?>
-  </td>
-
-      <td>
 
       <?php
+    }
+
+
+// 
+
+
+
+
+
+    else {
+      
+      
+      ?>
+
+<button href="#" type="button" class="btn btn-primary custom" disabled>Issue</button>
+
+<?php
+    }?>
+
+
+
+    
+
+
+
+      
+
+      
+    
+    
+    
+
+
+    </td>
+
+    <td>
+
+    <?php
 
 if(($flag==1 and $flag2==0) or ($flag==0 and $flag2==0)){
-  ?>
+?>
 
-  <a href="issuebookdelete.php?bi=<?php echo $res['Bookid'];?>&rn=<?php echo $rn;?>" type="button" class="btn btn-primary" >Return</a>
+<a href="issuebookdelete.php?bi=<?php echo $res['Bookid'];?>&rn=<?php echo $rn;?>" type="button" class="btn btn-danger custom" >Return</a>
 
 
-  <?php
+<?php
 
 }
- ?>
- </td>
-   </tr>
-    <?php   } ?>
+else
+{
+  ?>
+ <button href="#" type="button" class="btn btn-danger custom" disabled>Return</button>
+  <?php 
+}
+
+
+
+
+
+    ?>
+
+
+
+
+    </td>
+      
+      
+      
+   
+    
+  </tr>
+  <?php   } ?>
+
+
+
   </tbody>
 </table>
 </div>
-
-<?php 
-// if(isset($_POST['issue']))
-// {  
-//    $days=14;
-//     $returndate=date('Y-m-d',strtotime('+'.$days.'days'));
-//     $issuedate=date('Y-m-d');
-   
-//     $sql="insert into issuebook(rollno,bookid,issuedays,issuedate,returndate) values ('$rn','$_POST[bookid]','$_POST[issuedays]','$issuedate','$returndate')";
-   
-// if (mysqli_query($conn,$sql) === TRUE) {
-//   echo "<script>alert('Book issued successfully');window.location.href='issuebook.php?rn=$rn';</script>";
-// } else {
-//   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-// }
-
-// }
-
-?>
 
   </body>
 </html>

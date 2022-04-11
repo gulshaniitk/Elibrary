@@ -93,7 +93,7 @@ background-color: #777778;
           <a class="nav-link" href="books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="courses.php">Courses</a>
+          <a class="nav-link " href="courses.php">E-Courses</a>
         </li>
         
       </ul>

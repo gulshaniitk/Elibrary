@@ -19,17 +19,20 @@ $q1="SELECT `Quantity` FROM `books` WHERE Bookid='$bi'";
 
 $quant=mysqli_query($conn,$q1);
 
-$curr = mysqli_fetch_assoc($quant);
+$curr = mysqli_fetch_array($quant);
 
 $quantity=$curr['Quantity'];
 $quantity=$quantity+1;
 
 
-$q2="UPDATE `books` SET `Quantity`='$quantity' WHERE Bookid='$bookid'";
+$q2="UPDATE `books` SET `Quantity`='$quantity' WHERE Bookid='$bi'";
 
 $quant2=mysqli_query($conn,$q2);
 
 if ($res) {
+  
+
+
     echo "<script>alert('Book returned successfully');window.location.href='issuebook.php?rn=$rn';</script>";
     
   } else {

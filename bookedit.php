@@ -86,16 +86,16 @@ $res=mysqli_fetch_array($table);
                 <div class="row">
                   <div class="col-lg-4">
                     <label>Year:</label>
-                    <input type="number" name="year" class="form-control" required>
+                    <input type="number" name="year" class="form-control" value="<?php echo $res['Year'] ?>" required>
                   </div>
                   <div class="col-lg-4">
                     <label>Language:</label>
-                    <input type="text" name="language" class="form-control" >
+                    <input type="text" name="language" class="form-control" value="<?php echo $res['Language'] ?>" required>
 
                   </div>
                   <div class="col-lg-4">
                   <label>Quantity:</label>
-                  <input type="number" name="quantity" class="form-control" required>
+                  <input type="number" name="quantity" class="form-control" value="<?php echo $res['Quantity'] ?>" required>
                   </div>
                 </div>
                 <br>

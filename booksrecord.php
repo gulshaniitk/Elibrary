@@ -74,7 +74,8 @@ background-color: #777778;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -98,7 +99,7 @@ background-color: #777778;
           <a class="nav-link " href="books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="courses.php">Courses</a>
+          <a class="nav-link " href="courses.php">E-Courses</a>
         </li>
         
       </ul>
@@ -137,7 +138,7 @@ background-color: #777778;
 </div>
 <br>
 <div class="container" >
-<table class="table table-hover" style="text-align: center;">
+<table class="table table-hover sortable" style="text-align: center;">
   <thead class="table-dark">
     <tr>
       <th scope="col">S.No.</th>
@@ -182,7 +183,7 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['issuedays']; ?></td>
       <td><?php echo cal_fine($res['returndate']); ?></td>
       <td >
-      <a href="booksrecorddelete.php?id=<?php echo $res['id'] ?> ?>" class="btn btn-danger" >Return</a>
+      <a href="booksrecorddelete.php?bi=<?php echo $res['bookid'];?>&rn=<?php echo $res['rollno'];?>" class="btn btn-danger" >Return</a>
       </td>
     </tr>
     <?php  $x++; } ?>
