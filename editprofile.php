@@ -136,7 +136,12 @@ background-color: #777778;
                       <input type="text" name="email" class="form-control"  value="<?php echo $res['email'] ?>" disabled>
                       <br>
                       <Label>Password:</Label>
-                      <input type="text" name="password" class="form-control"  value="<?php echo $res['password'] ?>" required>
+                      <input type="password" id="password" name="password" class="form-control"  value="<?php echo $res['password'] ?>" required>
+                      <div  style="position:absolute;right: 475px;" >
+                    
+                    <input type="checkbox"  onclick="f()"> <label style="font-size:small;"> Show Password </label>
+
+    </div>
                   <br>
                   <label>Firstname:</label>
                   <input type="text" name="firstname" class="form-control" value="<?php echo $res['firstname'] ?>" >
@@ -197,6 +202,41 @@ if (mysqli_query($conn,$sql) === TRUE) {
 }
 
 ?>
+<script>
+        // const togglePassword = document
+        //     .querySelector('#togglePassword');
+  
+        // const password = document.querySelector('#password');
+  
+        // togglePassword.addEventListener('click', () => {
+  
+        //     // Toggle the type attribute using
+        //     // getAttribure() method
+        //     const type = password
+        //         .getAttribute('type') === 'password' ?
+        //         'text' : 'password';
+                  
+        //     password.setAttribute('type', type);
+  
+        //     // Toggle the eye and bi-eye icon
+        //     this.classList.toggle('bi-eye');
+        // });
+
+        function f(){
+          var x=document.getElementById("password");
+          if(x.type==="password"){
+            x.type="text";
+          }
+          else {
+            x.type="password";
+          }
+        }
+
+
+
+   
+    </script>
+
 
 </body>
 
