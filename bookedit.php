@@ -100,7 +100,7 @@ $res=mysqli_fetch_array($table);
                 </div>
                 <br>
                 <label>Category:</label>
-                <textarea type="text" name="category" class="form-control"  value="<?php echo $res['Category'] ?>" rows="4" cols="50"></textarea>
+                <input type="text" name="category" class="form-control"  value="<?php echo $res['Category'] ?>" rows="4" cols="50"></input>
                 <br>
                 <button type="submit" class="btn btn-primary" name="update" >Update</button>
                 </form>

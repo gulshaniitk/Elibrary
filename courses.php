@@ -142,7 +142,7 @@ background-color: #777778;
   <thead class="table-dark">
     <tr>
       <th scope="col">S.No.</th>
-      <th scope="col">Course Id</th>
+    
       <th scope="col">Name</th>
       <th scope="col">Instructors</th>
       <th scope="col">Year</th>
@@ -178,7 +178,7 @@ while($res=mysqli_fetch_array($table))
     ?>
     <tr>
     <td><?php echo $x; ?></td>
-      <td><?php echo $res['courseid']; ?></td>
+      
       <td><?php echo $res['name']; ?></td>
       <td><?php echo $res['instructors']; ?></td>
       <td><?php echo $res['year']; ?></td>

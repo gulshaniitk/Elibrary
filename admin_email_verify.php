@@ -205,10 +205,10 @@ h1 {
              <h3  >Enter New Password</h3>
                     
                     <div class="form-group">
-                    <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Enter password" name="password" required />
+                    <input type="password" id="adminname" class="form-control form-control-lg" placeholder="Enter password" name="password" required />
   <input type="text" id="adminname" class="form-control form-control-lg" name="email" value="<?php echo $email; ?>" hidden />
   <br>
-  <input type="text" id="adminname" class="form-control form-control-lg" placeholder="Confirm password" name="cpassword" required />
+  <input type="password" id="adminname" class="form-control form-control-lg" placeholder="Confirm password" name="cpassword" required />
   <label style="color: red;"><?php echo $msg ?></label>
                     </div>
                     <div class="form-group">

@@ -112,7 +112,7 @@ if($adminid==null)
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
               <div id="ui">
-                <h2 class="text-center">Book Registraion Form</h1>
+                <h2 class="text-center">Add New Book</h1>
                 <form class="form-group" action=" " method="post">
                 <Label>Title:</Label>
                       <input type="text" name="title" class="form-control" placeholder="Enter the title here " required>

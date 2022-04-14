@@ -70,6 +70,10 @@ body{
   font-size: 19px;
 }
 
+form i {
+            margin-left: -30px;
+            cursor: pointer;
+        }
 </style>
 
   </head>
@@ -89,6 +93,13 @@ body{
     -->
 
     
+    <link rel="stylesheet" href=
+"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity=
+"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -170,15 +181,37 @@ body{
                       <input type="text" name="email" class="form-control"  value="<?php echo $res['email'] ?>" disabled>
                       <br>
                       <Label>Password:</Label>
-                      <input type="text" name="password" class="form-control"  value="<?php echo $res2['password'] ?>" required>
-                  <br>
+
+                      
+                      <input type="password" name="password" class="form-control"  id="password"  value="<?php echo $res2['password'] ?>" required>
+
+                      <div  style="position:absolute;right: 50px;" >
+                    
+                      <input type="checkbox"  onclick="f()"> <label style="font-size:small;"> Show Password </label>
+
+      </div>
+                      
+<!-- 
+                    <div class="pwd">
+    <input type="text" placeholder="Password *"/>
+    <span class="p-viewer">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+    </span>
+</div> -->
+
+
+
+   
+<br>
+
+                  
                   
 
                
 
 
                 
-                <div class="row">
+                <div class="row" >
 
                   <div class="col-lg-6">
                     <label>Contactno</label>
@@ -241,7 +274,40 @@ if (mysqli_query($conn,$sql) ===TRUE ) {
 
 ?>
 
+<script>
+        // const togglePassword = document
+        //     .querySelector('#togglePassword');
+  
+        // const password = document.querySelector('#password');
+  
+        // togglePassword.addEventListener('click', () => {
+  
+        //     // Toggle the type attribute using
+        //     // getAttribure() method
+        //     const type = password
+        //         .getAttribute('type') === 'password' ?
+        //         'text' : 'password';
+                  
+        //     password.setAttribute('type', type);
+  
+        //     // Toggle the eye and bi-eye icon
+        //     this.classList.toggle('bi-eye');
+        // });
 
+        function f(){
+          var x=document.getElementById("password");
+          if(x.type==="password"){
+            x.type="text";
+          }
+          else {
+            x.type="password";
+          }
+        }
+
+
+
+   
+    </script>
 
 
   </body>
