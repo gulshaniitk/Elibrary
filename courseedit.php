@@ -19,6 +19,7 @@ $res=mysqli_fetch_array($table);
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <title>Edit Course</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -19,6 +19,7 @@ $res=mysqli_fetch_array($table);
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <title>Issue Book</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -90,6 +91,7 @@ background-color: #777778;
    </style>
     
   </head>
+
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    

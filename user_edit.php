@@ -32,7 +32,7 @@ $res2=mysqli_fetch_array($table2);
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>User Home</title>
+    <title>Edit Profile</title>
 
     <style>
 body{
@@ -85,22 +85,14 @@ form i {
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/cornae@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
 
     
-    <link rel="stylesheet" href=
-"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href=
-"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity=
-"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -112,28 +104,31 @@ form i {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="home_user.php">Home</a>
+          <a class="nav-link "  aria-current="page" href="home_user.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="user_books.php">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="user_courses.php">E-Courses</a>
+          <a class="nav-link "  href="user_courses.php">E-Courses</a>
         </li>
         
       </ul>
       <ul class="navbar-nav navbar-right ">
         <li class="nav-item">
-          <a class="nav-link active" href="user_edit.php">Edit Profile</a>
+          <a class="nav-link active"  href="user_edit.php">Edit Profile</a>
         </li>
         <li><a href="user_log_out.php" class="btn btn-danger ">
-          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <span class="glyphicon glyphicon-log-out " id="out" ></span> Logout</a></li>
        
         
       </ul>
     </div>
   </div>
 </nav>
+
+
+<br>
 
 
 
@@ -185,7 +180,7 @@ form i {
                       
                       <input type="password" name="password" class="form-control"  id="password"  value="<?php echo $res2['password'] ?>" required>
 
-                      <div  style="position:absolute;right: 50px;" >
+                      <div  style="position:absolute;right: 475px;" >
                     
                       <input type="checkbox"  onclick="f()"> <label style="font-size:small;"> Show Password </label>
 
