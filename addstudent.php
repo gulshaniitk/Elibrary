@@ -167,7 +167,7 @@ if($adminid==null)
     <?php 
 if(isset($_POST['submit']))
 { 
-  $q1="SELECT * FROM `students` WHERE rollno='$_POST[rollno]'";
+  $q1="SELECT * FROM `students` WHERE rollno='$_POST[rollno]' or email='$_POST[email]'";
   $table=mysqli_query($conn,$q1);
 
   if(mysqli_num_rows($table)==1){
