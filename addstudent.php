@@ -140,7 +140,7 @@ if($adminid==null)
                   </div>
                   <div class="col-lg-4">
                     <label>Age:</label>
-                    <input type="number" name="age" class="form-control" placeholder="Enter the age">
+                    <input type="number" name="age" class="form-control" placeholder="Enter the age" required>
 
                   </div>
                   <div class="col-lg-4">
@@ -153,7 +153,7 @@ if($adminid==null)
                 </div>
                 <br>
                 <label>Address:</label>
-                <textarea type="text" name="address" class="form-control" placeholder="Enter the Address here" rows="4" cols="50"></textarea>
+                <textarea type="text" name="address" class="form-control" placeholder="Enter the Address here" rows="4" cols="50" required></textarea>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
                 </form>

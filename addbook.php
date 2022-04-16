@@ -125,7 +125,7 @@ if($adminid==null)
                   <input type="text" name="link" class="form-control" placeholder="Enter the link" >
                 <br>
                   <label>Publisher:</label>
-                  <input type="text" name="publisher" class="form-control" placeholder="Enter the Publisher here" >
+                  <input type="text" name="publisher" class="form-control" placeholder="Enter the Publisher here" required >
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
@@ -155,7 +155,7 @@ if($adminid==null)
                 </div>
                 <br>
                 <label>Category:</label>
-                <textarea type="text" name="category" class="form-control" placeholder="Enter the category of the here" rows="4" cols="50"></textarea>
+                <textarea type="text" name="category" class="form-control" placeholder="Enter the category of the here" rows="4" cols="50" required></textarea>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
                 </form>

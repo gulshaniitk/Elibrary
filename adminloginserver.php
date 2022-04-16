@@ -10,10 +10,10 @@ if($email==NULL || $password==NULL)
     $emailmsg="";
     $passwordmsg="";
     if($email==NULL)
-     $emailmsg="* Email empty";
+     $emailmsg="Email empty";
     
      if($password==NULL)
-     $passwordmsg="* Password empty";
+     $passwordmsg="Password empty";
   
     header("location:index.php?ademailmsg=$emailmsg&adpasswordmsg=$passwordmsg");
 }

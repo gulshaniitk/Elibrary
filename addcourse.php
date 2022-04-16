@@ -124,7 +124,7 @@ background-color: #777778;
                       <input type="text" name="instructors" class="form-control" placeholder="Enter the author name here " required>
                   <br>
                   <label>Link:</label>
-                  <input type="text" name="link" class="form-control" placeholder="Enter the link" >
+                  <input type="text" name="link" class="form-control" placeholder="Enter the link" required>
                 <br>
                 <div class="row">
                   <div class="col-lg-6">
@@ -139,7 +139,7 @@ background-color: #777778;
                 </div>
                 <br>
                 <label>Skills:</label>
-                <textarea type="text" name="skills" class="form-control" placeholder="Enter the skills here" rows="4" cols="50"></textarea>
+                <textarea type="text" name="skills" class="form-control" placeholder="Enter the skills here" rows="4" cols="50" required></textarea>
                 <br>
                 <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
                 </form>
