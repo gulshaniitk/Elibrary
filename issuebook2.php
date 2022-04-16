@@ -16,6 +16,15 @@ $sql="select * from students where rollno='$rn'";
 $table=mysqli_query($conn,$sql);
 $res=mysqli_fetch_array($table);
 
+$sql4="select * from issuebook where rollno='$rn'";
+$table4=mysqli_query($conn,$sql4);
+$res4=mysqli_num_rows($table4);
+if($res4==10){
+
+  echo "<script>alert('Book cannot be Issued as student have already issued 10 books.');window.location.href='issuebook.php?rn=$rn';</script>";
+
+}
+
 $sql2="select * from registered_students where rollno='$rn'";
 $table2=mysqli_query($conn,$sql2);
 $res2=mysqli_fetch_array($table2);
