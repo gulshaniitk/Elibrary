@@ -173,11 +173,11 @@ h1 {
                     
                         <div class="form-group">
                             <input type="number"  name="rollno" class="form-control" placeholder="Your Roll Number"  />
-                            <label style="color: white;"><?php echo $adroll_nomsg; ?></label>
+                            <label style="color: red;"><?php echo $adroll_nomsg; ?></label>
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" class="form-control" placeholder="Your Password "  />
-                            <label style="color: white;"><?php echo $apasswordmsg; ?></label>
+                            <label style="color: red;"><?php echo $apasswordmsg; ?></label>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btnSubmit"  />
@@ -202,11 +202,11 @@ h1 {
                     <h3>Admin Login</h3>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Email " name="email" />
-                            <label style="color: white;"><?php echo $ademailmsg; ?></label>
+                            <label style="color: red;"><?php echo $ademailmsg; ?></label>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Your Password " name="password" />
-                            <label style="color: white;"><?php echo $adpasswordmsg; ?></label>
+                            <label style="color: red;"><?php echo $adpasswordmsg; ?></label>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btnSubmit" name="login" />

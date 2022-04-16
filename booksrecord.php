@@ -181,7 +181,12 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['issuedate']; ?></td>
       <td><?php echo $res['returndate']; ?></td>
       <td><?php echo $res['issuedays']; ?></td>
-      <td><?php echo cal_fine($res['returndate']); ?></td>
+      <td><?php 
+      $x1="Rs.";
+      $x2=cal_fine($res['returndate']); 
+      $x1.=$x2;
+      
+      echo $x1; ?></td>
       <td >
       <a href="booksrecorddelete.php?bi=<?php echo $res['bookid'];?>&rn=<?php echo $res['rollno'];?>" class="btn btn-danger" >Return</a>
       </td>

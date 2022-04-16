@@ -143,14 +143,14 @@ form i {
 
                 <div class="col-lg-6">
                 <label>Firstname:</label>
-                  <input type="text" name="firstname" class="form-control" value="<?php echo $res['firstname'] ?>" >
+                  <input type="text" name="firstname" class="form-control" value="<?php echo $res['firstname'] ?>" required>
 
 
                 </div>
 
                 <div class="col-lg-6">
                 <label>Lastname:</label>
-                <input type="text" name="lastname" class="form-control"  value="<?php echo $res['lastname'] ?>" >
+                <input type="text" name="lastname" class="form-control"  value="<?php echo $res['lastname'] ?>" required>
 
                 </div>
 
@@ -210,12 +210,12 @@ form i {
 
                   <div class="col-lg-6">
                     <label>Contactno</label>
-                    <input type="text" class="form-control" name="contactno"  value="<?php echo $res['contactno'] ?>" >
+                    <input type="text" class="form-control" name="contactno"  value="<?php echo $res['contactno'] ?>" required>
                   </div>
 
                   <div class="col-lg-6">
                     <label>Dob:</label>
-                    <input type="date" name="dob" class="form-control"  value="<?php echo $res['dob'] ?>" > 
+                    <input type="date" name="dob" class="form-control"  value="<?php echo $res['dob'] ?>" required> 
                   </div>
 
                 </div>
@@ -224,7 +224,7 @@ form i {
                 <div class="row">
                   <div class="col-lg-6">
                     <label>Age:</label>
-                    <input type="number" name="age" class="form-control"  value="<?php echo $res['age'] ?>">
+                    <input type="number" name="age" class="form-control"  value="<?php echo $res['age'] ?>" required>
                   </div>
                   <div class="col-lg-6">
                   <label>Gender:</label>
@@ -237,7 +237,7 @@ form i {
                 </div>
                 <br>
                 <label>Address:</label>
-                <textarea type="text" name="address" class="form-control" rows="4" cols="50"><?php echo $res['address'] ?></textarea>
+                <textarea type="text" name="address" class="form-control" rows="4" cols="50" required><?php echo $res['address'] ?></textarea>
                 <br>
                 <button type="submit" class="btn btn-primary" name="update" >Update</button>
                 </form>

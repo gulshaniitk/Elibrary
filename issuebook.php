@@ -215,7 +215,12 @@ while($res=mysqli_fetch_array($table))
       <td><?php echo $res['Author']; ?></td>
       <td><?php echo $res['issuedate']; ?></td>
       <td><?php echo $res['returndate']; ?></td>
-      <td><?php echo cal_fine($res['returndate']); ?></td>
+      <td><?php 
+      $x1="Rs.";
+      $x2=cal_fine($res['returndate']); 
+      $x1.=$x2;
+      
+      echo $x1; ?></td>
       <td><a href="issuebookdelete.php?rn=<?php echo $rn ?>&bi=<?php echo $res['Bookid'] ?>" class="btn btn-primary" >Return</a></td>
       
     </tr>
