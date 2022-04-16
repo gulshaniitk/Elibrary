@@ -158,7 +158,7 @@ background-color: #777778;
       <th scope="col">Quantity</th>
       <th scope="col">Link</th>
       <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+      <!-- <th scope="col">Delete</th> -->
     </tr>
   </thead>
   <tbody>
@@ -196,9 +196,9 @@ while($res=mysqli_fetch_array($table))
       <td><a target="_blank" href="<?php echo $res['Link']; ?>" class="btn btn-primary" >Visit</a></td>
       <td >
         <a href="bookedit.php?bookid=<?php echo $res['Bookid']; ?>" class="btn btn-info" >Edit</a></td>
-        <td>
+        <!-- <td>
         <a href="bookdelete.php?bookid=<?php echo $res['Bookid']; ?>" class="btn btn-danger" >Delete</a>
-      </td>
+      </td> -->
     </tr>
     <?php  $x++; } ?>
   </tbody>
